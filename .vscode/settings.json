@@ -1,0 +1,36 @@
+{
+    "cSpell.words": [
+        "APPICON",
+        "ASSETCATALOG",
+        "BITCODE",
+        "FMDB",
+        "Foodex",
+        "INFOPLIST",
+        "LTRB",
+        "Onone",
+        "RUNPATH",
+        "SAHARAH",
+        "Schyler",
+        "Stateful",
+        "Subtags",
+        "tanyao",
+        "Xcode",
+        "airplanemode",
+        "autofocus",
+        "cupertino",
+        "interps",
+        "libstdc",
+        "macos",
+        "mailto",
+        "sqflite",
+        "toolchain",
+        "unicorndial",
+        "vsync",
+        "xcassets",
+        "xcworkspace"
+    ],
+    "cSpell.enableFiletypes": [
+        "dart",
+        "yaml"
+    ]
+}
