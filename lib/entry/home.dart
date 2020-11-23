@@ -10,6 +10,10 @@ class TanyaoHome extends StatefulWidget {
 class _TanyaoHomeState extends State<TanyaoHome> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("123"),
+      ),
+    );
   }
 }
