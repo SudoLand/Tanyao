@@ -4,7 +4,6 @@ import 'package:tanyao/i18n/core/localizations.dart';
 class GatherStartGameCardView extends StatelessWidget {
   final Icon icon;
   final String gameName;
-
   final void Function() onPress;
 
   GatherStartGameCardView({

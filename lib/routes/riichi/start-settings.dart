@@ -8,6 +8,8 @@ class RiichiStartSettingsView extends StatefulWidget {
 }
 
 class _RiichiStartSettingsViewState extends State<RiichiStartSettingsView> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
@@ -17,6 +19,22 @@ class _RiichiStartSettingsViewState extends State<RiichiStartSettingsView> {
         title: coreLocalizations.getText("start-offline-game", {
           "game": "riichi-mahjong",
         }),
+      ),
+      body: Form(
+        key: this._formKey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Center(
+              child: FlatButton(
+                onPressed: () {
+                  if (_formKey.currentState.validate()) {}
+                },
+                child: coreLocalizations.getText("start-game"),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
