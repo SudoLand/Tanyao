@@ -1,33 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:tanyao/i18n/core/localizations.dart';
+import 'package:tanyao/routes/gather/components/start-game-card.dart';
 
 class GatherView extends StatelessWidget {
+  GatherView();
+
   @override
   Widget build(BuildContext context) {
-    final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
-
     return Scaffold(
       body: ListView(
         children: [
-          Card(
-            child: InkWell(
-              onTap: () {},
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  ListTile(
-                    leading: Icon(Icons.album),
-                    title: coreLocalizations.getText("riichi-mahjong"),
-                    subtitle: coreLocalizations.getText(
-                      "start-offline-game",
-                      replacements: {
-                        "game": "riichi-mahjong",
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
+          GatherStartGameCardView(
+            icon: Icon(Icons.album),
+            gameName: "riichi-mahjong",
+          ),
+          GatherStartGameCardView(
+            icon: Icon(Icons.album),
+            gameName: "competition-mahjong",
           ),
         ],
       ),
