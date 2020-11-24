@@ -27,16 +27,36 @@ class CoreLocalizations {
     return map;
   }
 
-  String getString(String key) {
-    final String value = this._stringMap[key];
+  String getString(
+    String key, {
+    Map<String, String> replacements,
+  }) {
+    String value = this._stringMap[key];
+
     if (value == null) {
       return "[$key]";
     }
+
+    if (replacements is Map) {
+      for (String key in replacements.keys) {
+        value = value.replaceFirst(
+          "{$key}",
+          this.getString(key, replacements: replacements),
+        );
+      }
+    }
+
     return value;
   }
 
-  Text getText(String key) {
-    return Text(this.getString(key));
+  Text getText(
+    String key, {
+    Map<String, String> replacements,
+  }) {
+    return Text(this.getString(
+      key,
+      replacements: replacements,
+    ));
   }
 }
 
