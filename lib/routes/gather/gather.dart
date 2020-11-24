@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
-class HistoryView extends StatelessWidget {
+class GatherView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Center(
+        child: Text("Gather"),
+      ),
+    );
   }
 }
