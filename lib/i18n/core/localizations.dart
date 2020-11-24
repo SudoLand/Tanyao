@@ -39,9 +39,9 @@ class CoreLocalizations {
 
         for (String replacementKey in replacements.keys) {
           final String replacedValue = replacements[replacementKey];
-          replaced.add("[$replacementKey - $replacedValue]");
+          replaced.add("$replacementKey:$replacedValue");
         }
-        return "[$key] (${replaced.join(",")})";
+        return "[$key](${replaced.join(",")})";
       }
       return "[$key]";
     }

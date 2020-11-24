@@ -18,7 +18,12 @@ class GatherView extends StatelessWidget {
                   ListTile(
                     leading: Icon(Icons.album),
                     title: coreLocalizations.getText("riichi-mahjong"),
-                    subtitle: coreLocalizations.getText("riichi-mahjong"),
+                    subtitle: coreLocalizations.getText(
+                      "start-offline-game",
+                      replacements: {
+                        "game": "riichi-mahjong",
+                      },
+                    ),
                   ),
                 ],
               ),
