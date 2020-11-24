@@ -5,9 +5,12 @@ class GatherStartGameCardView extends StatelessWidget {
   final Icon icon;
   final String gameName;
 
+  final void Function() onPress;
+
   GatherStartGameCardView({
     @required this.icon,
     @required this.gameName,
+    @required this.onPress,
   });
 
   @override
@@ -16,7 +19,7 @@ class GatherStartGameCardView extends StatelessWidget {
 
     return Card(
       child: InkWell(
-        onTap: () {},
+        onTap: this.onPress,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
