@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
-import 'package:tanyao/routes/common/ink-well-card.dart';
+import 'package:tanyao/routes/gather/components/start-game-card.dart';
 import 'package:tanyao/routes/riichi/start-settings.dart';
 
 class GatherView extends StatelessWidget {
@@ -13,7 +13,7 @@ class GatherView extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          InkWellCardView(
+          GatherStartGameCardView(
             onPress: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -24,7 +24,7 @@ class GatherView extends StatelessWidget {
             icon: Icon(Icons.album),
             gameName: coreLocalizations.getString("riichi-mahjong"),
           ),
-          InkWellCardView(
+          GatherStartGameCardView(
             onPress: () {},
             icon: Icon(Icons.album),
             gameName: coreLocalizations.getString("competition-mahjong"),

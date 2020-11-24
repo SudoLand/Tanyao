@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
+import 'package:tanyao/routes/common/ink-well-card.dart';
 
 class GatherStartGameCardView extends StatelessWidget {
   final Icon icon;
@@ -16,22 +17,13 @@ class GatherStartGameCardView extends StatelessWidget {
   Widget build(BuildContext context) {
     final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
 
-    return Card(
-      child: InkWell(
-        onTap: this.onPress,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            ListTile(
-              leading: this.icon,
-              title: Text(this.gameName),
-              subtitle: coreLocalizations.getText("start-offline-game", {
-                "game": this.gameName,
-              }),
-            ),
-          ],
-        ),
-      ),
+    return InkWellCardView(
+      onPress: this.onPress,
+      icon: this.icon,
+      title: Text(this.gameName),
+      subtitle: coreLocalizations.getText("start-offline-game", {
+        "game": this.gameName,
+      }),
     );
   }
 }
