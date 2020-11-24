@@ -48,7 +48,6 @@ class CoreLocalizations {
 
     if (replacements is Map) {
       for (String replacementKey in replacements.keys) {
-        print(replacementKey);
         value = value.replaceFirst(
           "{$replacementKey}",
           replacements[replacementKey],
