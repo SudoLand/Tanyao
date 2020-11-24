@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
+import 'package:tanyao/routes/riichi/game.dart';
 
 class RiichiStartSettingsView extends StatefulWidget {
   @override
@@ -28,7 +29,13 @@ class _RiichiStartSettingsViewState extends State<RiichiStartSettingsView> {
             Center(
               child: FlatButton(
                 onPressed: () {
-                  if (_formKey.currentState.validate()) {}
+                  if (_formKey.currentState.validate()) {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => RiichiGameView(),
+                      ),
+                    );
+                  }
                 },
                 child: coreLocalizations.getText("start-game"),
               ),

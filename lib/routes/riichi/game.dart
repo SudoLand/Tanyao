@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tanyao/i18n/core/localizations.dart';
 
 class RiichiGameView extends StatefulWidget {
   @override
@@ -8,6 +9,14 @@ class RiichiGameView extends StatefulWidget {
 class _RiichiGameViewState extends State<RiichiGameView> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
+
+    return Scaffold(
+      body: Column(
+        children: [
+          coreLocalizations.getText("Hello"),
+        ],
+      ),
+    );
   }
 }
