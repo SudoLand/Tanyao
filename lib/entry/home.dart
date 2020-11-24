@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tanyao/i18n/core/localizations.dart';
 
 class TanyaoHome extends StatefulWidget {
   static const String route = '/home';
@@ -10,9 +11,11 @@ class TanyaoHome extends StatefulWidget {
 class _TanyaoHomeState extends State<TanyaoHome> {
   @override
   Widget build(BuildContext context) {
+    final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: Text("123"),
+        title: coreLocalizations.getText("TANYAO"),
       ),
     );
   }
