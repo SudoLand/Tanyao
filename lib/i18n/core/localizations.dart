@@ -34,14 +34,26 @@ class CoreLocalizations {
     String value = this._stringMap[key];
 
     if (value == null) {
+      if (replacements is Map) {
+        final List<String> replaced = [];
+
+        for (String replacementKey in replacements.keys) {
+          final String replacedValue = replacements[replacementKey];
+          replaced.add("[$replacementKey - $replacedValue]");
+        }
+        return "[$key] (${replaced.join(",")})";
+      }
       return "[$key]";
     }
 
     if (replacements is Map) {
-      for (String key in replacements.keys) {
+      for (String replacementKey in replacements.keys) {
         value = value.replaceFirst(
-          "{$key}",
-          this.getString(key, replacements: replacements),
+          "{$replacementKey}",
+          this.getString(
+            replacementKey,
+            replacements: replacements,
+          ),
         );
       }
     }
