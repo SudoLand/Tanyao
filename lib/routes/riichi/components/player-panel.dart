@@ -5,9 +5,11 @@ import 'package:tanyao/i18n/core/localizations.dart';
 import 'package:tanyao/routes/common/tile/tile-input.dart';
 
 class PlayerPanelView extends StatelessWidget {
+  final int quarterTurns;
   final PlayerEntity player;
 
   PlayerPanelView({
+    @required this.quarterTurns,
     @required this.player,
   });
 
@@ -53,7 +55,7 @@ class PlayerPanelView extends StatelessWidget {
                               Curves.easeInOutBack.transform(x.value) - 1.0;
 
                           return RotatedBox(
-                            quarterTurns: 2,
+                            quarterTurns: this.quarterTurns,
                             child: Transform(
                               transform: Matrix4.translationValues(
                                 0.0,

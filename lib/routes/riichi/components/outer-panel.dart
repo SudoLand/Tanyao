@@ -18,6 +18,7 @@ class RiichiOuterPanelView extends StatelessWidget {
           child: Align(
             alignment: Alignment.bottomCenter,
             child: PlayerPanelView(
+              quarterTurns: 2,
               player: this.game.player1,
             ),
           ),
@@ -28,6 +29,7 @@ class RiichiOuterPanelView extends StatelessWidget {
             child: RotatedBox(
               quarterTurns: 1,
               child: PlayerPanelView(
+                quarterTurns: 3,
                 player: this.game.player2,
               ),
             ),
@@ -39,6 +41,7 @@ class RiichiOuterPanelView extends StatelessWidget {
             child: RotatedBox(
               quarterTurns: 2,
               child: PlayerPanelView(
+                quarterTurns: 4,
                 player: this.game.player3,
               ),
             ),
@@ -50,6 +53,7 @@ class RiichiOuterPanelView extends StatelessWidget {
             child: RotatedBox(
               quarterTurns: 3,
               child: PlayerPanelView(
+                quarterTurns: 1,
                 player: this.game.player4,
               ),
             ),
