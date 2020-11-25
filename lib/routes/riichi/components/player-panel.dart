@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tanyao/entity/mahjong.dart';
 import 'package:tanyao/entity/player.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
-import 'package:tanyao/routes/common/side-dialog.dart';
-import 'package:tanyao/routes/common/tile/tile-input.dart';
+import 'package:tanyao/routes/common/show-tile-count-dialog.dart';
 
 class PlayerPanelView extends StatelessWidget {
   final int quarterTurns;
@@ -43,16 +41,9 @@ class PlayerPanelView extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      showSideDialog(
+                      showTileCountDialog(
                         context,
                         quarterTurns: this.quarterTurns,
-                        child: Column(
-                          children: [
-                            TileInputView(
-                              onPressed: (MahjongTile tile) {},
-                            ),
-                          ],
-                        ),
                       );
                     },
                   ),
