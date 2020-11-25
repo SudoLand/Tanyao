@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tanyao/entity/mahjong.dart';
 import 'package:tanyao/entity/player.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
+import 'package:tanyao/routes/common/tile/tile-input.dart';
 
 class PlayerPanelView extends StatelessWidget {
   final PlayerEntity player;
@@ -51,7 +53,7 @@ class PlayerPanelView extends StatelessWidget {
                               Curves.easeInOutBack.transform(x.value) - 1.0;
 
                           return RotatedBox(
-                            quarterTurns: 1,
+                            quarterTurns: 2,
                             child: Transform(
                               transform: Matrix4.translationValues(
                                 0.0,
@@ -60,12 +62,33 @@ class PlayerPanelView extends StatelessWidget {
                               ),
                               child: Opacity(
                                 opacity: x.value,
-                                child: Card(
-                                  child: Container(
-                                    height: 100,
-                                    color: Colors.purple,
-                                    child: Container(),
-                                  ),
+                                child: Stack(
+                                  children: [
+                                    Positioned.fill(
+                                      child: Align(
+                                        alignment: Alignment.topCenter,
+                                        child: Card(
+                                          child: RotatedBox(
+                                            quarterTurns: 2,
+                                            child: Container(
+                                              padding:
+                                                  const EdgeInsets.all(5.0),
+                                              width: 400,
+                                              height: 170,
+                                              child: Column(
+                                                children: [
+                                                  TileInputView(
+                                                    onPressed:
+                                                        (MahjongTile tile) {},
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -77,13 +100,6 @@ class PlayerPanelView extends StatelessWidget {
                           return null;
                         },
                       );
-                      // builder: (BuildContext context) {
-                      //   return RotatedBox(
-                      //     quarterTurns: 1,
-                      // child: ,
-                      //   );
-                      // },
-                      // );
                     },
                   ),
                 ),
