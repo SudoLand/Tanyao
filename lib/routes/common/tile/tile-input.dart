@@ -3,6 +3,12 @@ import 'package:tanyao/entity/mahjong.dart';
 import 'package:tanyao/routes/common/tile/tile-button.dart';
 
 class TileInputView extends StatefulWidget {
+  final void Function(MahjongTile tile) onPressed;
+
+  TileInputView({
+    @required this.onPressed,
+  });
+
   @override
   _TileInputViewState createState() => _TileInputViewState();
 }
@@ -49,7 +55,9 @@ class _TileInputViewState extends State<TileInputView> {
           (MahjongTile tile) => Expanded(
             child: TileButtonView(
               tile,
-              onPressed: (MahjongTile tile) {},
+              onPressed: (MahjongTile tile) {
+                widget.onPressed(tile);
+              },
             ),
           ),
         )

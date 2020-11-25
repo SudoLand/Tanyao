@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/entity/hand.dart';
+import 'package:tanyao/entity/mahjong.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
 import 'package:tanyao/routes/common/tile/tile-hand.dart';
 import 'package:tanyao/routes/common/tile/tile-input.dart';
@@ -44,7 +45,12 @@ class _TileInputToolViewState extends State<TileInputToolView> {
             margin: const EdgeInsets.all(10.0),
             child: Container(
               padding: const EdgeInsets.all(15.0),
-              child: TileInputView(),
+              child: TileInputView(
+                onPressed: (MahjongTile tile) {
+                  this._hand.addTile(tile);
+                  this.setState(() {});
+                },
+              ),
             ),
           ),
         ],

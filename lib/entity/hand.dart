@@ -2,6 +2,7 @@ import 'package:tanyao/entity/mahjong.dart';
 
 class MahjongHand {
   final Map<String, int> handMap = Map<String, int>();
+  final Set<String> extras = Set<String>();
 
   MahjongHand() {
     this.reset();
@@ -12,6 +13,8 @@ class MahjongHand {
     for (MahjongTile tile in tiles) {
       this.handMap[tile.toString()] = 0;
     }
+
+    this.extras.clear();
   }
 
   List<MahjongTile> getDots() {
@@ -52,6 +55,15 @@ class MahjongHand {
     tiles.addAll(this.getWinds());
     tiles.addAll(this.getDragons());
     return tiles;
+  }
+
+  void addTile(MahjongTile tile) {
+    int value = this.handMap[tile.toString()];
+
+    if (value >= 4) {
+      return;
+    }
+    this.handMap[tile.toString()]++;
   }
 
   List<MahjongTile> _mapTiles(List<MahjongTile> targetTiles) {

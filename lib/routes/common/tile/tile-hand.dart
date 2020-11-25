@@ -11,10 +11,12 @@ class TileHandView extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<MahjongTile> tiles = this.hand.getAllTiles();
 
-    return Row(
+    return Wrap(
       children: tiles
           .map(
-            (MahjongTile tile) => Text(tile.toString()),
+            (MahjongTile tile) => Text(
+              tile.toString(),
+            ),
           )
           .toList(),
     );
