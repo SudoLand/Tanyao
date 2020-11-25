@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tanyao/entity/mahjong.dart';
+import 'package:tanyao/routes/common/tile-input/tile-button.dart';
 
 class TileInputView extends StatefulWidget {
   @override
@@ -12,20 +14,14 @@ class _TileInputViewState extends State<TileInputView> {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            MaterialButton(
-              child: Text('1p'),
-              color: Theme.of(context).buttonColor,
-              minWidth: 0,
-              onPressed: () {},
-            ),
-            MaterialButton(
-              child: Text('2p'),
-              color: Theme.of(context).buttonColor,
-              minWidth: 0,
-              onPressed: () {},
-            ),
-          ],
+          children: MahjongTile.getAvailableDots()
+              .map(
+                (MahjongTile tile) => TileButtonView(
+                  tile,
+                  onPressed: (MahjongTile tile) {},
+                ),
+              )
+              .toList(),
         )
       ],
     );

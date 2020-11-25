@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/entity/mahjong.dart';
+import 'package:tanyao/routes/common/tile-text.dart';
 
 class TileButtonView extends StatelessWidget {
-  final MahjongType type;
-  final int value;
+  final MahjongTile tile;
 
-  TileButtonView({
-    @required this.type,
-    @required this.value,
+  final void Function(MahjongTile tile) onPressed;
+
+  TileButtonView(
+    this.tile, {
+    @required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      child: Text('1p'),
+      child: TileTextView(this.tile),
       color: Theme.of(context).buttonColor,
       minWidth: 0,
-      onPressed: () {},
+      onPressed: () => this.onPressed(this.tile),
     );
   }
 }

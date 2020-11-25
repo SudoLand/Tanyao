@@ -29,7 +29,8 @@
         "unicorndial",
         "vsync",
         "xcassets",
-        "xcworkspace"
+        "xcworkspace",
+        "zhong"
     ],
     "cSpell.enableFiletypes": [
         "dart",
