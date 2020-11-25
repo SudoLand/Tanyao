@@ -98,4 +98,8 @@ class MahjongTile {
     }
     return "unknown";
   }
+
+  MahjongTile clone() {
+    return MahjongTile(this.type, this.value);
+  }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/entity/hand.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
+import 'package:tanyao/routes/common/tile/tile-hand.dart';
 import 'package:tanyao/routes/common/tile/tile-input.dart';
 
 class TileInputToolView extends StatefulWidget {
@@ -32,6 +33,9 @@ class _TileInputToolViewState extends State<TileInputToolView> {
                 ListTile(
                   leading: Icon(Icons.face),
                   title: coreLocalizations.getText("result"),
+                ),
+                ListTile(
+                  title: TileHandView(this._hand),
                 ),
               ],
             ),
