@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tanyao/entity/player.dart';
 import 'package:tanyao/routes/riichi/components/outer-panel.dart';
-import 'package:tanyao/routes/riichi/riichi/game.dart';
+import 'package:tanyao/routes/riichi/riichi/game-four.dart';
 
 class RiichiGameView extends StatefulWidget {
   @override
@@ -8,7 +9,12 @@ class RiichiGameView extends StatefulWidget {
 }
 
 class _RiichiGameViewState extends State<RiichiGameView> {
-  final RiichiGame _game = RiichiGame();
+  final RiichiGameFour _game = RiichiGameFour(
+    player1: PlayerEntity(name: "Mario"),
+    player2: PlayerEntity(name: "Luigi"),
+    player3: PlayerEntity(name: "Link"),
+    player4: PlayerEntity(name: "Zelda"),
+  );
 
   @override
   Widget build(BuildContext context) {

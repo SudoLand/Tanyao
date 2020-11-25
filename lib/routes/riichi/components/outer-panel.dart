@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/routes/riichi/components/center-panel.dart';
 import 'package:tanyao/routes/riichi/components/player-panel.dart';
-import 'package:tanyao/routes/riichi/riichi/game.dart';
+import 'package:tanyao/routes/riichi/riichi/game-four.dart';
 
 class RiichiOuterPanelView extends StatelessWidget {
-  final RiichiGame game;
+  final RiichiGameFour game;
 
   RiichiOuterPanelView({
     @required this.game,
@@ -17,7 +17,9 @@ class RiichiOuterPanelView extends StatelessWidget {
         Positioned.fill(
           child: Align(
             alignment: Alignment.bottomCenter,
-            child: PlayerPanelView(),
+            child: PlayerPanelView(
+              player: this.game.player1,
+            ),
           ),
         ),
         Positioned.fill(
@@ -25,7 +27,9 @@ class RiichiOuterPanelView extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: RotatedBox(
               quarterTurns: 1,
-              child: PlayerPanelView(),
+              child: PlayerPanelView(
+                player: this.game.player2,
+              ),
             ),
           ),
         ),
@@ -34,7 +38,9 @@ class RiichiOuterPanelView extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: RotatedBox(
               quarterTurns: 2,
-              child: PlayerPanelView(),
+              child: PlayerPanelView(
+                player: this.game.player3,
+              ),
             ),
           ),
         ),
@@ -43,7 +49,9 @@ class RiichiOuterPanelView extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: RotatedBox(
               quarterTurns: 3,
-              child: PlayerPanelView(),
+              child: PlayerPanelView(
+                player: this.game.player4,
+              ),
             ),
           ),
         ),
