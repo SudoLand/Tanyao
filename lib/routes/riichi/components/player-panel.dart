@@ -37,7 +37,38 @@ class PlayerPanelView extends StatelessWidget {
                         ),
                       ),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        barrierDismissible: true,
+                        builder: (BuildContext context) {
+                          return RotatedBox(
+                            quarterTurns: 1,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: <Widget>[
+                                Container(
+                                  height: 100,
+                                  width: MediaQuery.of(context).size.width,
+                                  color: Colors.purple,
+                                  child: new Column(
+                                    children: <Widget>[
+                                      new Text(
+                                        'custom dialog text',
+                                        style: new TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
+                    },
                   ),
                 ),
               ),
