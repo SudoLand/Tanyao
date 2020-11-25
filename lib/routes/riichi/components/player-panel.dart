@@ -41,9 +41,15 @@ class PlayerPanelView extends StatelessWidget {
                       showGeneralDialog(
                         context: context,
                         barrierDismissible: true,
-                        transitionBuilder: (context, a1, a2, widget) {
-                          final curvedValue =
-                              Curves.easeInOutBack.transform(a1.value) - 1.0;
+                        transitionBuilder: (
+                          BuildContext context,
+                          Animation<double> x,
+                          Animation<double> y,
+                          Widget widget,
+                        ) {
+                          final double curvedValue =
+                              Curves.easeInOutBack.transform(x.value) - 1.0;
+
                           return RotatedBox(
                             quarterTurns: 1,
                             child: Transform(
@@ -53,13 +59,13 @@ class PlayerPanelView extends StatelessWidget {
                                 0.0,
                               ),
                               child: Opacity(
-                                opacity: a1.value,
-                                child: AlertDialog(
-                                  shape: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(16.0),
+                                opacity: x.value,
+                                child: Card(
+                                  child: Container(
+                                    height: 100,
+                                    color: Colors.purple,
+                                    child: Container(),
                                   ),
-                                  title: Text('Hello!!'),
-                                  content: Text('How are you?'),
                                 ),
                               ),
                             ),
@@ -74,27 +80,7 @@ class PlayerPanelView extends StatelessWidget {
                       // builder: (BuildContext context) {
                       //   return RotatedBox(
                       //     quarterTurns: 1,
-                      //     child: Column(
-                      //       mainAxisAlignment: MainAxisAlignment.end,
-                      //       children: <Widget>[
-                      //         Container(
-                      //           height: 100,
-                      //           width: MediaQuery.of(context).size.width,
-                      //           color: Colors.purple,
-                      //           child: new Column(
-                      //             children: <Widget>[
-                      //               new Text(
-                      //                 'custom dialog text',
-                      //                 style: new TextStyle(
-                      //                   fontSize: 14,
-                      //                   color: Colors.white,
-                      //                 ),
-                      //               ),
-                      //             ],
-                      //           ),
-                      //         ),
-                      //       ],
-                      //     ),
+                      // child: ,
                       //   );
                       // },
                       // );
