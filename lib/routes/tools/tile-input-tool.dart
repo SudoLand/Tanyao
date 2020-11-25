@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
-import 'package:tanyao/routes/common/tile-input.dart';
+import 'package:tanyao/routes/common/tile-input/tile-input.dart';
 
 class TileInputToolView extends StatefulWidget {
   @override

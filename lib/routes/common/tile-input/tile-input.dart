@@ -12,8 +12,16 @@ class _TileInputViewState extends State<TileInputView> {
       children: [
         Row(
           children: [
-            RaisedButton(
-              child: Text("1p"),
+            MaterialButton(
+              child: Text('1p'),
+              color: Theme.of(context).buttonColor,
+              minWidth: 0,
+              onPressed: () {},
+            ),
+            MaterialButton(
+              child: Text('2p'),
+              color: Theme.of(context).buttonColor,
+              minWidth: 0,
               onPressed: () {},
             ),
           ],
