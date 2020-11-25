@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/routes/riichi/components/outer-panel.dart';
+import 'package:tanyao/routes/riichi/riichi/game.dart';
 
 class RiichiGameView extends StatefulWidget {
   @override
@@ -7,10 +8,14 @@ class RiichiGameView extends StatefulWidget {
 }
 
 class _RiichiGameViewState extends State<RiichiGameView> {
+  final RiichiGame _game = RiichiGame();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: RiichiOuterPanelView(),
+      body: RiichiOuterPanelView(
+        game: this._game,
+      ),
     );
   }
 }
