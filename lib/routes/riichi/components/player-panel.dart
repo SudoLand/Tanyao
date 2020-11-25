@@ -21,6 +21,26 @@ class PlayerPanelView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ListTile(
+              leading: ClipOval(
+                child: Material(
+                  color: Theme.of(context).primaryColor,
+                  child: InkWell(
+                    child: SizedBox(
+                      width: 40,
+                      height: 40,
+                      child: Center(
+                        child: coreLocalizations.getText(
+                          "he-win",
+                          style: TextStyle(
+                            color: Theme.of(context).cardColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                    onTap: () {},
+                  ),
+                ),
+              ),
               title: Text(this.player.name),
             ),
           ],

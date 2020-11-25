@@ -4,6 +4,7 @@ const Map<String, String> coreLocalizationChinese = {
   "east": "东",
   "fa": "发",
   "gather": "召集",
+  "he-win": "和",
   "history": "历史",
   "north": "北",
   "result": "结果",

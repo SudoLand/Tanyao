@@ -4,6 +4,7 @@ const Map<String, String> coreLocalizationEnglish = {
   "east": "East",
   "fa": "Fa",
   "gather": "Gather",
+  "he-win": "Win!",
   "history": "History",
   "north": "North",
   "result": "Result",

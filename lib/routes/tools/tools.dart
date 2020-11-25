@@ -21,9 +21,12 @@ class ToolsView extends StatelessWidget {
             },
             icon: Icon(Icons.timelapse),
             title: coreLocalizations.getText("tile-input-tool"),
-            subtitle: coreLocalizations.getText("start-tool", {
-              "tool": coreLocalizations.getString("tile-input-tool"),
-            }),
+            subtitle: coreLocalizations.getText(
+              "start-tool",
+              replacements: {
+                "tool": coreLocalizations.getString("tile-input-tool"),
+              },
+            ),
           ),
         ],
       ),

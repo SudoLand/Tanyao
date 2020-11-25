@@ -17,9 +17,12 @@ class _RiichiStartSettingsViewState extends State<RiichiStartSettingsView> {
 
     return Scaffold(
       appBar: AppBar(
-        title: coreLocalizations.getText("start-offline-game", {
-          "game": coreLocalizations.getString("riichi-mahjong"),
-        }),
+        title: coreLocalizations.getText(
+          "start-offline-game",
+          replacements: {
+            "game": coreLocalizations.getString("riichi-mahjong"),
+          },
+        ),
       ),
       body: Form(
         key: this._formKey,

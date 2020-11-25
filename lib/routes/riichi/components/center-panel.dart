@@ -10,8 +10,8 @@ class RiichiCenterPanelView extends StatelessWidget {
     final MediaQueryData mediaQueryData = MediaQuery.of(context);
 
     final double size = min(
-      mediaQueryData.size.width / 1.8,
-      mediaQueryData.size.height / 1.8,
+      mediaQueryData.size.width / 2,
+      mediaQueryData.size.height / 2,
     );
 
     return Container(

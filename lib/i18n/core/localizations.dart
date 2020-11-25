@@ -59,13 +59,17 @@ class CoreLocalizations {
   }
 
   Text getText(
-    String key, [
+    String key, {
     Map<String, String> replacements,
-  ]) {
-    return Text(this.getString(
-      key,
-      replacements,
-    ));
+    TextStyle style,
+  }) {
+    return Text(
+      this.getString(
+        key,
+        replacements,
+      ),
+      style: style,
+    );
   }
 }
 
