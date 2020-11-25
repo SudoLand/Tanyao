@@ -13,17 +13,46 @@ class _TileInputViewState extends State<TileInputView> {
     return Column(
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: MahjongTile.getAvailableDots()
-              .map(
-                (MahjongTile tile) => TileButtonView(
-                  tile,
-                  onPressed: (MahjongTile tile) {},
-                ),
-              )
-              .toList(),
-        )
+          children: this.getMahjongList(MahjongTile.getAvailableDots()),
+        ),
+        SizedBox(
+          height: 5.0,
+        ),
+        Row(
+          children: this.getMahjongList(MahjongTile.getAvailableBamboos()),
+        ),
+        SizedBox(
+          height: 5.0,
+        ),
+        Row(
+          children: this.getMahjongList(MahjongTile.getAvailableCharacters()),
+        ),
+        SizedBox(
+          height: 5.0,
+        ),
+        Row(
+          children: this.getMahjongList(MahjongTile.getAvailableWinds()),
+        ),
+        SizedBox(
+          height: 5.0,
+        ),
+        Row(
+          children: this.getMahjongList(MahjongTile.getAvailableDragons()),
+        ),
       ],
     );
+  }
+
+  List<Widget> getMahjongList(List<MahjongTile> tiles) {
+    return tiles
+        .map(
+          (MahjongTile tile) => Expanded(
+            child: TileButtonView(
+              tile,
+              onPressed: (MahjongTile tile) {},
+            ),
+          ),
+        )
+        .toList();
   }
 }

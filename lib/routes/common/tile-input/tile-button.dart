@@ -17,7 +17,7 @@ class TileButtonView extends StatelessWidget {
     return MaterialButton(
       child: TileTextView(this.tile),
       color: Theme.of(context).buttonColor,
-      minWidth: 0,
+      minWidth: 0.0,
       onPressed: () => this.onPressed(this.tile),
     );
   }
