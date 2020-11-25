@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tanyao/entity/mahjong.dart';
 import 'package:tanyao/entity/player.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
+import 'package:tanyao/routes/common/side-dialog.dart';
 import 'package:tanyao/routes/common/tile/tile-input.dart';
 
 class PlayerPanelView extends StatelessWidget {
@@ -42,65 +43,16 @@ class PlayerPanelView extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      showGeneralDialog(
-                        context: context,
-                        barrierDismissible: true,
-                        transitionBuilder: (
-                          BuildContext context,
-                          Animation<double> x,
-                          Animation<double> y,
-                          Widget widget,
-                        ) {
-                          final double curvedValue =
-                              Curves.easeInOutBack.transform(x.value) - 1.0;
-
-                          return RotatedBox(
-                            quarterTurns: this.quarterTurns,
-                            child: Transform(
-                              transform: Matrix4.translationValues(
-                                0.0,
-                                curvedValue * 200,
-                                0.0,
-                              ),
-                              child: Opacity(
-                                opacity: x.value,
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: Align(
-                                        alignment: Alignment.topCenter,
-                                        child: Card(
-                                          child: RotatedBox(
-                                            quarterTurns: 2,
-                                            child: Container(
-                                              padding:
-                                                  const EdgeInsets.all(5.0),
-                                              width: 400,
-                                              height: 170,
-                                              child: Column(
-                                                children: [
-                                                  TileInputView(
-                                                    onPressed:
-                                                        (MahjongTile tile) {},
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                      showSideDialog(
+                        context,
+                        quarterTurns: this.quarterTurns,
+                        child: Column(
+                          children: [
+                            TileInputView(
+                              onPressed: (MahjongTile tile) {},
                             ),
-                          );
-                        },
-                        barrierLabel: '',
-                        transitionDuration: Duration(milliseconds: 200),
-                        pageBuilder: (context, animation1, animation2) {
-                          return null;
-                        },
+                          ],
+                        ),
                       );
                     },
                   ),
