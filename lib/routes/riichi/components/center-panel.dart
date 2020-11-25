@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
 
@@ -5,10 +7,16 @@ class RiichiCenterPanelView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
+    final MediaQueryData mediaQueryData = MediaQuery.of(context);
+
+    final double size = min(
+      mediaQueryData.size.width / 1.8,
+      mediaQueryData.size.height / 1.8,
+    );
 
     return Container(
-      width: 150,
-      height: 150,
+      width: size,
+      height: size,
       child: Card(
         child: Stack(
           children: [

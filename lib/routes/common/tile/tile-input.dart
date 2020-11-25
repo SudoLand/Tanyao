@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/entity/mahjong.dart';
-import 'package:tanyao/routes/common/tile-input/tile-button.dart';
+import 'package:tanyao/routes/common/tile/tile-button.dart';
 
 class TileInputView extends StatefulWidget {
   @override

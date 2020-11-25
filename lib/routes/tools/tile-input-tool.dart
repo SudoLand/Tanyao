@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tanyao/entity/hand.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
-import 'package:tanyao/routes/common/tile-input/tile-input.dart';
+import 'package:tanyao/routes/common/tile/tile-input.dart';
 
 class TileInputToolView extends StatefulWidget {
   @override
@@ -8,6 +9,8 @@ class TileInputToolView extends StatefulWidget {
 }
 
 class _TileInputToolViewState extends State<TileInputToolView> {
+  MahjongHand _hand = MahjongHand();
+
   @override
   Widget build(BuildContext context) {
     final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
