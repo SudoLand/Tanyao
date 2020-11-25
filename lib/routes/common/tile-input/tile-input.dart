@@ -11,6 +11,7 @@ class _TileInputViewState extends State<TileInputView> {
     return Column(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             MaterialButton(
               child: Text('1p'),

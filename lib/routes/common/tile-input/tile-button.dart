@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:tanyao/entity/mahjong.dart';
 
-class TileButton extends StatelessWidget {
+class TileButtonView extends StatelessWidget {
+  final MahjongType type;
+  final int value;
+
+  TileButtonView({
+    @required this.type,
+    @required this.value,
+  });
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialButton(
+      child: Text('1p'),
+      color: Theme.of(context).buttonColor,
+      minWidth: 0,
+      onPressed: () {},
+    );
   }
 }

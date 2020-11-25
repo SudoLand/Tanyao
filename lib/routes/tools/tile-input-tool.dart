@@ -16,7 +16,13 @@ class _TileInputToolViewState extends State<TileInputToolView> {
       appBar: AppBar(
         title: coreLocalizations.getText("tile-input-tool"),
       ),
-      body: TileInputView(),
+      body: Card(
+        margin: const EdgeInsets.all(10.0),
+        child: Container(
+          padding: const EdgeInsets.all(15.0),
+          child: TileInputView(),
+        ),
+      ),
     );
   }
 }
