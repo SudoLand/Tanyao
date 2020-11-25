@@ -4,6 +4,8 @@ void showSideDialog(
   BuildContext context, {
   @required int quarterTurns,
   @required Widget child,
+  @required double width,
+  @required double height,
 }) {
   showGeneralDialog(
     context: context,
@@ -36,8 +38,8 @@ void showSideDialog(
                         quarterTurns: 2,
                         child: Container(
                           padding: const EdgeInsets.all(5.0),
-                          width: 400,
-                          height: 170,
+                          width: width,
+                          height: height,
                           child: child,
                         ),
                       ),
