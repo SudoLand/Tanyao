@@ -7,10 +7,19 @@ class RiichiGameFour {
   final PlayerEntity player3;
   final PlayerEntity player4;
 
+  int dealer;
+
   RiichiGameFour({
     @required this.player1,
     @required this.player2,
     @required this.player3,
     @required this.player4,
-  });
+    int initialDealer,
+  }) {
+    if (initialDealer is int) {
+      this.dealer = initialDealer;
+    } else {
+      this.dealer = 1;
+    }
+  }
 }
