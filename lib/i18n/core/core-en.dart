@@ -1,6 +1,16 @@
 const Map<String, String> coreLocalizationEnglish = {
+  "bai": "Bai",
+  "east": "East",
+  "fa": "Fa",
+  "north": "North",
+  "result": "Result",
   "riichi-mahjong": "Riichi Mahjong",
+  "south": "South",
   "start-game": "Start Game",
-  "start-offline-game": "Start offline {game}",
+  "start-tool": "Start {tool} tool",
+  "start-offline-game": "Start {game} offline",
   "tanyao": "Tanyao",
+  "tile-input-tool": "Tile Input Tool",
+  "west": "West",
+  "zhong": "Zhong",
 };
