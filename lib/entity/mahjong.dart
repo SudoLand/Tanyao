@@ -62,4 +62,40 @@ class MahjongTile {
   int value;
 
   MahjongTile(this.type, this.value);
+
+  String toString() {
+    switch (this.type) {
+      case MahjongType.bamboo:
+        return "${this.value}s";
+      case MahjongType.character:
+        return "${this.value}m";
+      case MahjongType.dot:
+        return "${this.value}p";
+      case MahjongType.dragon:
+        switch (this.value) {
+          case 1:
+            return "zhong";
+          case 2:
+            return "fa";
+          case 3:
+            return "bai";
+        }
+        return "unknown";
+      case MahjongType.wind:
+        switch (this.value) {
+          case 1:
+            return "east";
+          case 2:
+            return "south";
+          case 3:
+            return "west";
+          case 4:
+            return "north";
+        }
+        return "unknown";
+      case MahjongType.flower:
+        return "flower";
+    }
+    return "unknown";
+  }
 }
