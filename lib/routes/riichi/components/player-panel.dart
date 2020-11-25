@@ -38,36 +38,66 @@ class PlayerPanelView extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      showDialog(
+                      showGeneralDialog(
                         context: context,
                         barrierDismissible: true,
-                        builder: (BuildContext context) {
+                        transitionBuilder: (context, a1, a2, widget) {
+                          final curvedValue =
+                              Curves.easeInOutBack.transform(a1.value) - 1.0;
                           return RotatedBox(
                             quarterTurns: 1,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: <Widget>[
-                                Container(
-                                  height: 100,
-                                  width: MediaQuery.of(context).size.width,
-                                  color: Colors.purple,
-                                  child: new Column(
-                                    children: <Widget>[
-                                      new Text(
-                                        'custom dialog text',
-                                        style: new TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ],
+                            child: Transform(
+                              transform: Matrix4.translationValues(
+                                0.0,
+                                curvedValue * 200,
+                                0.0,
+                              ),
+                              child: Opacity(
+                                opacity: a1.value,
+                                child: AlertDialog(
+                                  shape: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(16.0),
                                   ),
+                                  title: Text('Hello!!'),
+                                  content: Text('How are you?'),
                                 ),
-                              ],
+                              ),
                             ),
                           );
                         },
+                        barrierLabel: '',
+                        transitionDuration: Duration(milliseconds: 200),
+                        pageBuilder: (context, animation1, animation2) {
+                          return null;
+                        },
                       );
+                      // builder: (BuildContext context) {
+                      //   return RotatedBox(
+                      //     quarterTurns: 1,
+                      //     child: Column(
+                      //       mainAxisAlignment: MainAxisAlignment.end,
+                      //       children: <Widget>[
+                      //         Container(
+                      //           height: 100,
+                      //           width: MediaQuery.of(context).size.width,
+                      //           color: Colors.purple,
+                      //           child: new Column(
+                      //             children: <Widget>[
+                      //               new Text(
+                      //                 'custom dialog text',
+                      //                 style: new TextStyle(
+                      //                   fontSize: 14,
+                      //                   color: Colors.white,
+                      //                 ),
+                      //               ),
+                      //             ],
+                      //           ),
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   );
+                      // },
+                      // );
                     },
                   ),
                 ),
