@@ -1,11 +1,15 @@
 import 'package:tanyao/mahjong/hand.dart';
+import 'package:tanyao/mahjong/set/base.dart';
+import 'package:tanyao/mahjong/set/triplet.dart';
 import 'package:tanyao/mahjong/tile.dart';
 import 'package:tanyao/mahjong/trace/result.dart';
 import 'package:tanyao/mahjong/type.dart';
 
-List<MahjongTile> _getCombo(MahjongHand hand, MahjongTile target) {
+MahjongSet _getCombo(MahjongHand hand, MahjongTile target) {
   if (target.type == MahjongType.wind || target.type == MahjongType.dragon) {
-    if (hand.getTileCount(target) == 3) {}
+    if (hand.getTileCount(target) == 3) {
+      return MahjongTripletSet();
+    }
   }
 }
 
@@ -14,7 +18,7 @@ MahjongTraceResult _recursiveTraceMahjong(MahjongHand hand) {
 
   for (int i = 1; i <= 9; i++) {}
   for (int i = 1; i <= 3; i++) {
-    final List<MahjongTile> combo = _getCombo(
+    final MahjongSet combo = _getCombo(
       cloneHand,
       MahjongTile(MahjongType.dragon, i),
     );
