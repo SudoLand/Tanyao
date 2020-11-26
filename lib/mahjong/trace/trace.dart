@@ -4,6 +4,7 @@ import 'package:tanyao/mahjong/trace/result.dart';
 MahjongTraceResult _recursiveTraceMahjong(MahjongHand hand) {
   final MahjongHand cloneHand = hand.clone();
 
+  for (int i = 1; i <= 9; i++) {}
   return MahjongTraceResult();
 }
 
