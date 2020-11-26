@@ -6,7 +6,12 @@ import 'package:tanyao/routes/common/tile/tile-text.dart';
 class TileHandView extends StatelessWidget {
   final MahjongHand hand;
 
-  TileHandView(this.hand);
+  final void Function(MahjongTile tile) onRemovePressed;
+
+  TileHandView(
+    this.hand, {
+    this.onRemovePressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +22,16 @@ class TileHandView extends StatelessWidget {
           .map(
             (MahjongTile tile) => Card(
               margin: const EdgeInsets.all(1.0),
-              child: Container(
-                padding: const EdgeInsets.all(5.0),
-                child: TileTextView(tile),
+              child: InkWell(
+                onTap: this.onRemovePressed == null
+                    ? null
+                    : () {
+                        this.onRemovePressed(tile);
+                      },
+                child: Container(
+                  padding: const EdgeInsets.all(5.0),
+                  child: TileTextView(tile),
+                ),
               ),
             ),
           )

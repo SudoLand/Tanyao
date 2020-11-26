@@ -66,6 +66,16 @@ class MahjongHand {
     this.handMap[tile.toString()]++;
   }
 
+  void removeTile(MahjongTile tile) {
+    int value = this.handMap[tile.toString()];
+
+    if (value <= 0) {
+      return;
+    }
+
+    this.handMap[tile.toString()]--;
+  }
+
   List<MahjongTile> _mapTiles(List<MahjongTile> targetTiles) {
     final List<MahjongTile> results = [];
 
