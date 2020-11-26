@@ -1,5 +1,8 @@
 import 'package:tanyao/mahjong/hand.dart';
+import 'package:tanyao/mahjong/tile.dart';
 import 'package:tanyao/mahjong/trace/result.dart';
+
+List<MahjongTile> _getCombo(MahjongHand hand, MahjongTile target) {}
 
 MahjongTraceResult _recursiveTraceMahjong(MahjongHand hand) {
   final MahjongHand cloneHand = hand.clone();

@@ -1,4 +1,5 @@
 import 'package:tanyao/mahjong/tile.dart';
+import 'package:tanyao/mahjong/type.dart';
 
 class MahjongHand {
   final Map<String, int> handMap = Map<String, int>();
@@ -53,6 +54,24 @@ class MahjongHand {
     return this._mapTiles(
       MahjongTile.getAvailableDragons(),
     );
+  }
+
+  List<MahjongTile> getTilesByType(MahjongType type) {
+    switch (type) {
+      case MahjongType.bamboo:
+        return this.getBamboos();
+      case MahjongType.character:
+        return this.getCharacters();
+      case MahjongType.dot:
+        return this.getDots();
+      case MahjongType.dragon:
+        return this.getDragons();
+      case MahjongType.wind:
+        return this.getWinds();
+      case MahjongType.flower:
+        return [];
+    }
+    return [];
   }
 
   List<MahjongTile> getAllTiles() {
