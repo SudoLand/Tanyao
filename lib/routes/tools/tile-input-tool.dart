@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/entity/hand.dart';
-import 'package:tanyao/entity/mahjong.dart';
+import 'package:tanyao/entity/mahjong/tile.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
 import 'package:tanyao/routes/common/tile/tile-hand.dart';
 import 'package:tanyao/routes/common/tile/tile-input.dart';

@@ -1,11 +1,4 @@
-enum MahjongType {
-  flower,
-  dragon,
-  wind,
-  dot,
-  bamboo,
-  character,
-}
+import 'package:tanyao/entity/mahjong/type.dart';
 
 class MahjongTile {
   static List<MahjongTile> getAvailableDots() {
