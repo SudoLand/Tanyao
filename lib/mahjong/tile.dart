@@ -1,4 +1,4 @@
-import 'package:tanyao/entity/mahjong/type.dart';
+import 'package:tanyao/mahjong/type.dart';
 
 class MahjongTile {
   static List<MahjongTile> getAvailableDots() {

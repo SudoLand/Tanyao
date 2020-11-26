@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tanyao/entity/mahjong/tile.dart';
-import 'package:tanyao/entity/mahjong/type.dart';
+import 'package:tanyao/mahjong/tile.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
+import 'package:tanyao/mahjong/type.dart';
 
 class TileTextView extends StatelessWidget {
   final MahjongTile tile;

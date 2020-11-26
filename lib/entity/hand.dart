@@ -1,4 +1,4 @@
-import 'package:tanyao/entity/mahjong/tile.dart';
+import 'package:tanyao/mahjong/tile.dart';
 
 class MahjongHand {
   final Map<String, int> handMap = Map<String, int>();
