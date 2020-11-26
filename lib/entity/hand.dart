@@ -1,22 +1,11 @@
 import 'package:tanyao/mahjong/tile.dart';
 
 class MahjongHand {
-  Map<String, int> handMap = Map<String, int>();
-  Set<String> extras = Set<String>();
+  final Map<String, int> handMap = Map<String, int>();
+  final Set<String> extras = Set<String>();
 
-  MahjongHand({
-    Map<String, int> initialHandMap,
-    Set<String> initialExtras,
-  }) {
+  MahjongHand() {
     this.reset();
-
-    if (initialHandMap is Map<String, int>) {
-      this.handMap = initialHandMap;
-    }
-
-    if (initialExtras is Set<String>) {
-      this.extras = initialExtras;
-    }
   }
 
   void reset() {
@@ -88,10 +77,11 @@ class MahjongHand {
   }
 
   MahjongHand clone() {
-    return MahjongHand(
-      initialHandMap: this.handMap,
-      initialExtras: this.extras,
-    );
+    final MahjongHand tempHand = MahjongHand();
+    tempHand.handMap.addAll(this.handMap);
+    tempHand.extras.addAll(this.extras);
+
+    return tempHand;
   }
 
   List<MahjongTile> _mapTiles(List<MahjongTile> targetTiles) {
