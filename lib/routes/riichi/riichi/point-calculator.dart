@@ -1,4 +1,4 @@
-import 'package:tanyao/entity/hand.dart';
+import 'package:tanyao/mahjong/hand.dart';
 import 'package:tanyao/mahjong/tile.dart';
 
 int pointCalculator(MahjongHand hand) {
