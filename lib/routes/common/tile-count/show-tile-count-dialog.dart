@@ -10,7 +10,7 @@ void showTileCountDialog(
     context,
     quarterTurns: quarterTurns,
     width: 425,
-    height: 250,
+    height: 300,
     child: RiichiTileCountPanelView(),
   );
 }

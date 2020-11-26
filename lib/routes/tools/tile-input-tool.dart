@@ -11,7 +11,7 @@ class TileInputToolView extends StatefulWidget {
 }
 
 class _TileInputToolViewState extends State<TileInputToolView> {
-  MahjongHand _hand = MahjongHand();
+  final MahjongHand _hand = MahjongHand();
 
   @override
   Widget build(BuildContext context) {

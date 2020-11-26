@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tanyao/entity/hand.dart';
 import 'package:tanyao/entity/mahjong.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
+import 'package:tanyao/routes/common/tile/tile-hand.dart';
 import 'package:tanyao/routes/common/tile/tile-input.dart';
 
 class RiichiTileCountPanelView extends StatefulWidget {
@@ -10,6 +12,8 @@ class RiichiTileCountPanelView extends StatefulWidget {
 }
 
 class _RiichiTileCountPanelViewState extends State<RiichiTileCountPanelView> {
+  final MahjongHand _hand = MahjongHand();
+
   @override
   Widget build(BuildContext context) {
     final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
@@ -20,11 +24,14 @@ class _RiichiTileCountPanelViewState extends State<RiichiTileCountPanelView> {
           leading: Icon(Icons.face),
           title: coreLocalizations.getText("result"),
         ),
-        // ListTile(
-        //   title: TileHandView(this._hand),
-        // ),
+        ListTile(
+          title: TileHandView(this._hand),
+        ),
         TileInputView(
-          onPressed: (MahjongTile tile) {},
+          onPressed: (MahjongTile tile) {
+            this._hand.addTile(tile);
+            this.setState(() {});
+          },
         ),
       ],
     );
