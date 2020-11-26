@@ -18,7 +18,7 @@ class MahjongHand {
     this.extras.clear();
   }
 
-  int totalTiles() {
+  int getTotalTileCount() {
     int total = 0;
     for (String key in this.handMap.keys) {
       total += this.handMap[key];
@@ -101,6 +101,10 @@ class MahjongHand {
     }
 
     this.handMap[tile.toString()]--;
+  }
+
+  int getTileCount(MahjongTile tile) {
+    return this.handMap[tile.toString()];
   }
 
   MahjongHand clone() {
