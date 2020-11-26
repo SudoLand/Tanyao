@@ -24,8 +24,9 @@ class _RiichiTileCountPanelViewState extends State<RiichiTileCountPanelView> {
           leading: Icon(Icons.face),
           title: coreLocalizations.getText("result"),
         ),
-        ListTile(
-          title: TileHandView(this._hand),
+        TileHandView(this._hand),
+        SizedBox(
+          height: 5.0,
         ),
         TileInputView(
           onPressed: (MahjongTile tile) {
