@@ -17,6 +17,14 @@ class MahjongHand {
     this.extras.clear();
   }
 
+  int totalTiles() {
+    int total = 0;
+    for (String key in this.handMap.keys) {
+      total += this.handMap[key];
+    }
+    return total;
+  }
+
   List<MahjongTile> getDots() {
     return this._mapTiles(
       MahjongTile.getAvailableDots(),
