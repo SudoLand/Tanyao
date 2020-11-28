@@ -6,7 +6,10 @@ import 'package:tanyao/mahjong/tile.dart';
 import 'package:tanyao/mahjong/trace/result.dart';
 import 'package:tanyao/mahjong/type.dart';
 
-List<MahjongSet> _getCombos(MahjongHand hand, MahjongTile target) {
+List<MahjongSet> findMahjongFirstAvailableCombos(
+  MahjongHand hand,
+  MahjongTile target,
+) {
   final MahjongType type = target.type;
 
   // If current type is **wind** or **dragon**
@@ -29,23 +32,12 @@ List<MahjongSet> _getCombos(MahjongHand hand, MahjongTile target) {
       possibleSets.add(MahjongTripletSet(target));
     }
 
+    // TODO: Sequence and Pairs
+
     return possibleSets;
   }
 
   return [];
-}
-
-MahjongTraceResult _recursiveTraceMahjong(MahjongHand hand) {
-  final MahjongHand cloneHand = hand.clone();
-
-  for (MahjongTile tile in MahjongTile.getAllAvailableTiles()) {
-    final List<MahjongSet> combos = _getCombos(cloneHand, tile);
-
-    if (combos.isNotEmpty) {
-      // TODO
-    }
-  }
-  return MahjongTraceResult();
 }
 
 MahjongTraceResult traceMahjong(MahjongHand hand) {
@@ -54,5 +46,16 @@ MahjongTraceResult traceMahjong(MahjongHand hand) {
   if (cloneHand.getTotalTileCount() != 14) {
     return null;
   }
-  return _recursiveTraceMahjong(hand);
+
+  for (MahjongTile tile in MahjongTile.getAllAvailableTiles()) {
+    final List<MahjongSet> combos = findMahjongFirstAvailableCombos(
+      cloneHand,
+      tile,
+    );
+
+    if (combos.isNotEmpty) {
+      // TODO
+    }
+  }
+  return MahjongTraceResult();
 }
