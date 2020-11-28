@@ -6,7 +6,19 @@ import 'package:tanyao/mahjong/trace/result.dart';
 import 'package:tanyao/mahjong/type.dart';
 
 MahjongSet _getCombo(MahjongHand hand, MahjongTile target) {
-  if (target.type == MahjongType.wind || target.type == MahjongType.dragon) {
+  final MahjongType type = target.type;
+
+  // If current type is **wind** or **dragon**
+  if (type == MahjongType.wind || type == MahjongType.dragon) {
+    if (hand.getTileCount(target) == 3) {
+      return MahjongTripletSet(target);
+    }
+  }
+
+  // If current type is **number**
+  if (type == MahjongType.bamboo ||
+      type == MahjongType.character ||
+      type == MahjongType.dot) {
     if (hand.getTileCount(target) == 3) {
       return MahjongTripletSet(target);
     }
