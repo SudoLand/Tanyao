@@ -8,7 +8,7 @@ import 'package:tanyao/mahjong/type.dart';
 MahjongSet _getCombo(MahjongHand hand, MahjongTile target) {
   if (target.type == MahjongType.wind || target.type == MahjongType.dragon) {
     if (hand.getTileCount(target) == 3) {
-      return MahjongTripletSet();
+      return MahjongTripletSet(target);
     }
   }
 }
