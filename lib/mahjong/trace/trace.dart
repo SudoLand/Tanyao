@@ -18,22 +18,11 @@ MahjongSet _getCombo(MahjongHand hand, MahjongTile target) {
 MahjongTraceResult _recursiveTraceMahjong(MahjongHand hand) {
   final MahjongHand cloneHand = hand.clone();
 
-  for (int i = 1; i <= 9; i++) {
-    // Numbers
-  }
-  for (int i = 1; i <= 4; i++) {
-    // Winds
-    final MahjongSet combo = _getCombo(
-      cloneHand,
-      MahjongTile(MahjongType.wind, i),
-    );
-  }
-  for (int i = 1; i <= 3; i++) {
-    // Dragons
-    final MahjongSet combo = _getCombo(
-      cloneHand,
-      MahjongTile(MahjongType.dragon, i),
-    );
+  for (MahjongTile tile in MahjongTile.getAllAvailableTiles()) {
+    final MahjongSet combo = _getCombo(cloneHand, tile);
+    if (combo != null) {
+      // TODO
+    }
   }
   return MahjongTraceResult();
 }
