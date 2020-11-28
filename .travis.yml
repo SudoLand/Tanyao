@@ -1,5 +1,9 @@
+language: dart
+
 os:
   - linux
+
+dist: xenial
 
 addons:
   apt:
