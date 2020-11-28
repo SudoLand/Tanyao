@@ -1,4 +1,4 @@
-language: dart
+language: shell
 
 os:
   - linux
