@@ -98,7 +98,7 @@ class MahjongTile {
   MahjongTile(this.type, this.value);
 
   MahjongTile operator +(int offset) {
-    final int resultValue = this.value + value;
+    final int resultValue = this.value + offset;
 
     if (resultValue > 9) {
       throw Exception("Overflow");

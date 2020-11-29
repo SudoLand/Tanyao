@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tanyao/mahjong/tile.dart';
+import 'package:tanyao/mahjong/type.dart';
 
 void main() {
   test('can initialize tile with string - east', () {
@@ -30,5 +31,10 @@ void main() {
   test('can initialize tile with string - unknown', () {
     final MahjongTile tile = MahjongTile.fromString('10s');
     expect(tile, equals(null));
+  });
+
+  test('can add with operator + - happy', () {
+    final MahjongTile tile = MahjongTile(MahjongType.bamboo, 2);
+    expect((tile + 1).toString(), equals('3s'));
   });
 }
