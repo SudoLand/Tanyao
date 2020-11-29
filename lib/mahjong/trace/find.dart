@@ -28,7 +28,7 @@ List<MahjongSet> findMahjongFirstAvailableCombos(
       type == MahjongType.dot) {
     final List<MahjongSet> possibleSets = [];
 
-    if (hand.getTileCount(target) == 2) {
+    if (hand.getTileCount(target) >= 2) {
       possibleSets.add(MahjongPairSet(target));
     }
 
