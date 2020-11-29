@@ -7,6 +7,8 @@ class MahjongTracePossibleResult {
   final MahjongHand hand;
   final List<MahjongSet> mahjongSets;
 
+  bool finalized;
+
   MahjongTracePossibleResult(this.hand, this.mahjongSets);
 
   List<MahjongTracePossibleResult> findNext() {
@@ -22,6 +24,10 @@ class MahjongTracePossibleResult {
       for (MahjongSet combo in combos) {
         nextResults.add(this.removeAndAddClone(combo));
       }
+    }
+
+    if (nextResults.isEmpty) {
+      finalized = true;
     }
 
     return nextResults;
