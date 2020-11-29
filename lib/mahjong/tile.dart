@@ -3,12 +3,16 @@ import 'package:tanyao/util/parse.dart';
 
 class MahjongTile {
   factory MahjongTile.fromString(String target) {
+    if (target.length != 2) {
+      return null;
+    }
+
     switch (target) {
       case 'ea':
         return MahjongTile(MahjongType.wind, 1);
       case 'so':
         return MahjongTile(MahjongType.wind, 2);
-      case 'wa':
+      case 'we':
         return MahjongTile(MahjongType.wind, 3);
       case 'no':
         return MahjongTile(MahjongType.wind, 4);
@@ -18,10 +22,6 @@ class MahjongTile {
         return MahjongTile(MahjongType.dragon, 2);
       case 'ba':
         return MahjongTile(MahjongType.dragon, 3);
-    }
-
-    if (target.length != 2) {
-      return null;
     }
 
     final int value = tryParseInt(target[0]);
