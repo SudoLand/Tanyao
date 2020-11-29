@@ -7,7 +7,7 @@ class MahjongTracePossibleResult {
   final MahjongHand hand;
   final List<MahjongSet> mahjongSets;
 
-  bool finalized;
+  bool finalized = false;
 
   MahjongTracePossibleResult(this.hand, this.mahjongSets);
 
@@ -27,7 +27,7 @@ class MahjongTracePossibleResult {
     }
 
     if (nextResults.isEmpty) {
-      finalized = true;
+      this.finalized = true;
     }
 
     return nextResults;
