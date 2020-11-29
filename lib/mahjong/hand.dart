@@ -158,4 +158,11 @@ class MahjongHand {
 
     return results;
   }
+
+  String toString() {
+    return this
+        .getAllTiles()
+        .map((MahjongTile tile) => tile.toString())
+        .join(',');
+  }
 }
