@@ -56,8 +56,13 @@ List<MahjongSet> findMahjongFirstAvailableCombos(
   return [];
 }
 
-MahjongTraceResult traceMahjong(MahjongHand hand) {
+MahjongTraceResult traceMahjong(
+  MahjongHand hand, [
+  MahjongTraceResult result,
+]) {
   final MahjongHand cloneHand = hand.clone();
+  final MahjongTraceResult newResult =
+      result == null ? MahjongTraceResult() : result;
 
   if (cloneHand.getTotalTileCount() != 14) {
     return null;
@@ -73,5 +78,5 @@ MahjongTraceResult traceMahjong(MahjongHand hand) {
       print(combos);
     }
   }
-  return MahjongTraceResult();
+  return newResult;
 }
