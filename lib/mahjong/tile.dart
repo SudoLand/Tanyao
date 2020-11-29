@@ -1,6 +1,48 @@
 import 'package:tanyao/mahjong/type.dart';
 
 class MahjongTile {
+  factory MahjongTile.fromString(String target) {
+    switch (target) {
+      case 'east':
+        return MahjongTile(MahjongType.wind, 1);
+      case 'south':
+        return MahjongTile(MahjongType.wind, 2);
+      case 'wast':
+        return MahjongTile(MahjongType.wind, 3);
+      case 'north':
+        return MahjongTile(MahjongType.wind, 4);
+      case 'zhong':
+        return MahjongTile(MahjongType.dragon, 1);
+      case 'fa':
+        return MahjongTile(MahjongType.dragon, 2);
+      case 'bai':
+        return MahjongTile(MahjongType.dragon, 3);
+    }
+
+    if (target.length != 2) {
+      return null;
+    }
+
+    int value;
+
+    try {
+      value = int.parse(target[0]);
+    } on FormatException {
+      return null;
+    }
+
+    switch (target[1]) {
+      case 'p':
+        return MahjongTile(MahjongType.dot, value);
+      case 's':
+        return MahjongTile(MahjongType.bamboo, value);
+      case 'w':
+        return MahjongTile(MahjongType.character, value);
+    }
+
+    return null;
+  }
+
   static List<MahjongTile> getAvailableDots() {
     final List<MahjongTile> tiles = [];
     for (int i = 1; i <= 9; i++) {

@@ -3,6 +3,8 @@ import 'package:tanyao/mahjong/tile.dart';
 import 'package:tanyao/mahjong/type.dart';
 
 class MahjongHand {
+  factory MahjongHand.fromString(String hand) {}
+
   final Map<String, int> handMap = Map<String, int>();
   final Set<String> extras = Set<String>();
 
