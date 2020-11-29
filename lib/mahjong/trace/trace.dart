@@ -1,6 +1,7 @@
 import 'package:tanyao/mahjong/hand.dart';
 import 'package:tanyao/mahjong/set/base.dart';
 import 'package:tanyao/mahjong/set/pair.dart';
+import 'package:tanyao/mahjong/set/sequence.dart';
 import 'package:tanyao/mahjong/set/triplet.dart';
 import 'package:tanyao/mahjong/tile.dart';
 import 'package:tanyao/mahjong/trace/result.dart';
@@ -29,10 +30,25 @@ List<MahjongSet> findMahjongFirstAvailableCombos(
     final List<MahjongSet> possibleSets = [];
 
     if (hand.getTileCount(target) == 3) {
+      possibleSets.add(MahjongPairSet(target));
+    }
+
+    if (hand.getTileCount(target) == 3) {
       possibleSets.add(MahjongTripletSet(target));
     }
 
-    // TODO: Sequence and Pairs
+    if (target.value >= 8) {
+      return possibleSets;
+    }
+
+    if (hand.getTileCount(target + 1) >= 1 &&
+        hand.getTileCount(target + 2) >= 1) {
+      possibleSets.add(MahjongSequenceSet([
+        target,
+        target + 1,
+        target + 2,
+      ]));
+    }
 
     return possibleSets;
   }
@@ -54,7 +70,7 @@ MahjongTraceResult traceMahjong(MahjongHand hand) {
     );
 
     if (combos.isNotEmpty) {
-      // TODO
+      print(combos);
     }
   }
   return MahjongTraceResult();

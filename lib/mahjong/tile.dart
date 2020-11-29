@@ -56,6 +56,16 @@ class MahjongTile {
 
   MahjongTile(this.type, this.value);
 
+  MahjongTile operator +(int offset) {
+    final int resultValue = this.value + value;
+
+    if (resultValue > 9) {
+      throw Exception("Overflow");
+    }
+
+    return MahjongTile(this.type, resultValue);
+  }
+
   String toString() {
     switch (this.type) {
       case MahjongType.bamboo:
