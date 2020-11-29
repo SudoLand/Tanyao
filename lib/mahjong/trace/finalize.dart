@@ -9,7 +9,21 @@ List<MahjongTracePossibleResult> finalizeMahjongPossibleResults(
     MahjongTracePossibleResult(hand, []),
   ];
 
-  while (possibleResults.isNotEmpty) {}
+  while (possibleResults.isNotEmpty) {
+    final MahjongTracePossibleResult firstResult = possibleResults.first;
+    possibleResults.removeAt(0);
 
-  return [];
+    final List<MahjongTracePossibleResult> iteratedResults =
+        firstResult.findNext();
+
+    for (MahjongTracePossibleResult eachResult in iteratedResults) {
+      if (eachResult.finalized) {
+        finalizedResults.add(eachResult);
+      } else {
+        possibleResults.add(eachResult);
+      }
+    }
+  }
+
+  return finalizedResults;
 }
