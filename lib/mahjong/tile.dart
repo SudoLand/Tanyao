@@ -1,21 +1,22 @@
 import 'package:tanyao/mahjong/type.dart';
+import 'package:tanyao/util/parse.dart';
 
 class MahjongTile {
   factory MahjongTile.fromString(String target) {
     switch (target) {
-      case 'east':
+      case 'ea':
         return MahjongTile(MahjongType.wind, 1);
-      case 'south':
+      case 'so':
         return MahjongTile(MahjongType.wind, 2);
-      case 'wast':
+      case 'wa':
         return MahjongTile(MahjongType.wind, 3);
-      case 'north':
+      case 'no':
         return MahjongTile(MahjongType.wind, 4);
-      case 'zhong':
+      case 'zh':
         return MahjongTile(MahjongType.dragon, 1);
       case 'fa':
         return MahjongTile(MahjongType.dragon, 2);
-      case 'bai':
+      case 'ba':
         return MahjongTile(MahjongType.dragon, 3);
     }
 
@@ -23,11 +24,9 @@ class MahjongTile {
       return null;
     }
 
-    int value;
+    final int value = tryParseInt(target[0]);
 
-    try {
-      value = int.parse(target[0]);
-    } on FormatException {
+    if (value == null) {
       return null;
     }
 

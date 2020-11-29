@@ -3,7 +3,30 @@ import 'package:tanyao/mahjong/tile.dart';
 import 'package:tanyao/mahjong/type.dart';
 
 class MahjongHand {
-  factory MahjongHand.fromString(String hand) {}
+  factory MahjongHand.fromString(String hand) {
+    final List<MahjongTile> tiles = [];
+    String duplicated = hand;
+
+    while (duplicated.length > 0) {
+      final MahjongTile tile = MahjongTile.fromString(
+        duplicated.substring(0, 2),
+      );
+
+      duplicated = duplicated.substring(2);
+      if (tile is MahjongTile) {
+        tiles.add(tile);
+      } else {
+        return null;
+      }
+    }
+
+    final MahjongHand result = MahjongHand();
+    for (MahjongTile tile in tiles) {
+      result.addTile(tile);
+    }
+
+    return result;
+  }
 
   final Map<String, int> handMap = Map<String, int>();
   final Set<String> extras = Set<String>();
