@@ -15,7 +15,7 @@ void main() {
     expect(results.length, equals(1));
     expect(results[0].hand.toString(), equals(''));
     expect(results[0].mahjongSets.length, equals(1));
-    expect(results[0].mahjongSets[0], equals(''));
+    expect(results[0].mahjongSets[0].toString(), equals('1s,2s,3s'));
   });
 }
 // spell-checker:enable
