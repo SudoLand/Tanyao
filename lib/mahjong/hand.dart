@@ -1,3 +1,4 @@
+import 'package:tanyao/mahjong/set/base.dart';
 import 'package:tanyao/mahjong/tile.dart';
 import 'package:tanyao/mahjong/type.dart';
 
@@ -101,6 +102,12 @@ class MahjongHand {
     }
 
     this.handMap[tile.toString()]--;
+  }
+
+  void removeSet(MahjongSet mahjongSet) {
+    for (MahjongTile tile in mahjongSet.tiles) {
+      this.removeTile(tile);
+    }
   }
 
   int getTileCount(MahjongTile tile) {
