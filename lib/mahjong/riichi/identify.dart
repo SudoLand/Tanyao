@@ -4,7 +4,9 @@ import 'package:tanyao/mahjong/set/pair.dart';
 import 'package:tanyao/mahjong/set/sequence.dart';
 import 'package:tanyao/mahjong/set/triplet.dart';
 
-bool _isRiichiSevenPairs(List<MahjongSet> mahjongSets) {
+bool _isRiichiSevenPairs(
+  List<MahjongSet> mahjongSets,
+) {
   if (mahjongSets.length != 7) {
     return false;
   }
@@ -18,7 +20,9 @@ bool _isRiichiSevenPairs(List<MahjongSet> mahjongSets) {
   return true;
 }
 
-RiichiResultType identifyRiichiMahjongSets(List<MahjongSet> mahjongSets) {
+RiichiResultType identifyRiichiMahjongSets(
+  List<MahjongSet> mahjongSets,
+) {
   if (_isRiichiSevenPairs(mahjongSets)) {
     return RiichiResultType.sevenPairs;
   }
