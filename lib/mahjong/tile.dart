@@ -2,15 +2,6 @@ import 'package:tanyao/mahjong/type.dart';
 import 'package:tanyao/util/parse.dart';
 
 class MahjongTile {
-  static MahjongTile east = MahjongTile(MahjongType.wind, 1);
-  static MahjongTile south = MahjongTile(MahjongType.wind, 2);
-  static MahjongTile west = MahjongTile(MahjongType.wind, 3);
-  static MahjongTile north = MahjongTile(MahjongType.wind, 4);
-
-  static MahjongTile zhong = MahjongTile(MahjongType.dragon, 1);
-  static MahjongTile fa = MahjongTile(MahjongType.dragon, 2);
-  static MahjongTile bai = MahjongTile(MahjongType.dragon, 3);
-
   factory MahjongTile.fromString(String target) {
     if (target.length != 2) {
       return null;
