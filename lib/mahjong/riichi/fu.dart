@@ -41,12 +41,40 @@ int calculateRiichiMahjongRegularSetsFu(
     }
 
     if (mahjongSet is MahjongTripletSet) {
-      if (mahjongSet.compareTile(MahjongTile.zhong()) ||
-          mahjongSet.compareTile(MahjongTile.fa()) ||
-          mahjongSet.compareTile(MahjongTile.bai()) ||
-          mahjongSet.compareTile(playerWind) ||
-          mahjongSet.compareTile(prevailingWind)) {
-        resultFu += 2;
+      final MahjongTripletSet castedSet = mahjongSet;
+
+      if (castedSet.singletonTile.isTerminalHonor) {
+        if (castedSet.kan) {
+          // Terminal Honor Kan
+          if (castedSet.concealed) {
+            resultFu += 32;
+          } else {
+            resultFu += 16;
+          }
+        } else {
+          // Terminal Honor
+          if (castedSet.concealed) {
+            resultFu += 8;
+          } else {
+            resultFu += 4;
+          }
+        }
+      } else {
+        if (castedSet.kan) {
+          // Regular Kan
+          if (castedSet.concealed) {
+            resultFu += 16;
+          } else {
+            resultFu += 8;
+          }
+        } else {
+          // Regular
+          if (castedSet.concealed) {
+            resultFu += 4;
+          } else {
+            resultFu += 2;
+          }
+        }
       }
     }
   }

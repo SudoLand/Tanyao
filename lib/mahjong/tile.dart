@@ -160,12 +160,31 @@ class MahjongTile {
     return this.type == MahjongType.character;
   }
 
+  bool get isNumeric {
+    return this.isBamboo || this.isDot || this.isCharacter;
+  }
+
   bool get isWind {
     return this.type == MahjongType.wind;
   }
 
   bool get isDragon {
     return this.type == MahjongType.dragon;
+  }
+
+  bool get isTerminal {
+    if (!this.isNumeric) {
+      return false;
+    }
+    return this.value == 1 || this.value == 9;
+  }
+
+  bool get isHonor {
+    return this.isWind || this.isDragon;
+  }
+
+  bool get isTerminalHonor {
+    return this.isTerminal || this.isHonor;
   }
 
   String toString() {
