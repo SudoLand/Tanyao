@@ -140,6 +140,14 @@ class MahjongTile {
     return MahjongTile(this.type, resultValue);
   }
 
+  bool operator ==(dynamic other) {
+    if (!(other is MahjongTile)) {
+      return false;
+    }
+
+    return this.type == other.type && this.value == other.value;
+  }
+
   String toString() {
     switch (this.type) {
       case MahjongType.bamboo:
@@ -178,5 +186,10 @@ class MahjongTile {
 
   MahjongTile clone() {
     return MahjongTile(this.type, this.value);
+  }
+
+  @override
+  int get hashCode {
+    return (this.type.index * 10) + this.value;
   }
 }
