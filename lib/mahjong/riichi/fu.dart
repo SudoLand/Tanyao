@@ -15,6 +15,7 @@ int calculateRiichiMahjongSevenPairsSetsFu(
 
 int calculateRiichiMahjongRegularSetsFu(
   List<MahjongSet> mahjongSets, {
+  bool buffer = true,
   bool clearGate = false,
   bool selfPick = false,
   @required MahjongTile playerWind,
@@ -79,5 +80,15 @@ int calculateRiichiMahjongRegularSetsFu(
     }
   }
 
-  return resultFu;
+  if (!buffer) {
+    return resultFu;
+  }
+
+  final int rest = resultFu % 10;
+
+  if (rest == 0) {
+    return resultFu;
+  }
+
+  return resultFu + 10 - rest;
 }
