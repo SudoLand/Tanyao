@@ -148,6 +148,26 @@ class MahjongTile {
     return this.type == other.type && this.value == other.value;
   }
 
+  bool get isBamboo {
+    return this.type == MahjongType.bamboo;
+  }
+
+  bool get isDot {
+    return this.type == MahjongType.dot;
+  }
+
+  bool get isCharacter {
+    return this.type == MahjongType.character;
+  }
+
+  bool get isWind {
+    return this.type == MahjongType.wind;
+  }
+
+  bool get isDragon {
+    return this.type == MahjongType.dragon;
+  }
+
   String toString() {
     switch (this.type) {
       case MahjongType.bamboo:

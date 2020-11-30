@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tanyao/mahjong/tile.dart';
-import 'package:tanyao/mahjong/type.dart';
 
 void main() {
   test('can initialize tile with string - east', () {
