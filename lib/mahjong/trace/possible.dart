@@ -19,6 +19,7 @@ class MahjongTracePossibleResult {
     final MahjongHand cloneHand = this.hand.clone();
     final List<MahjongTracePossibleResult> nextResults = [];
 
+    loop:
     for (MahjongTile tile in MahjongTile.getAllAvailableTiles()) {
       final List<MahjongSet> combos = findMahjongFirstAvailableCombos(
         cloneHand,
@@ -27,6 +28,10 @@ class MahjongTracePossibleResult {
 
       for (MahjongSet combo in combos) {
         nextResults.add(this.removeAndAddClone(combo));
+      }
+
+      if (combos.isNotEmpty) {
+        break loop;
       }
     }
 
