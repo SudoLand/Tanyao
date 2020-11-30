@@ -36,8 +36,25 @@ enum RiichiYakuType {
   threeKans, // 2 三杠子
   terminalHonorEachSet, // 2,1 混全带幺九
   terminalAndHonors, // 2 混老头
+  littleThreeDragons, // 2 小三元
   twoSetIdentical, // 3 两杯口
   terminalEachSet, // 3,2 纯全带幺九
   halfFlush, // 3,2 混一色
   flush, // 6,5 清一色
+
+  // Yakuman
+  thirteenOrphans, // 国士无双
+  fourConcealedTriplets, // 四暗刻
+  bigThreeDragons, // 大三元
+  littleFourWinds, // 小四喜
+  allHonors, // 字一色
+  allTerminals, // 青老头
+  allGreen, // 绿一色
+  nineGates, // 九连宝灯
+
+  // Double Yakuman
+  thirteenOrphansThirteenWait, // 国士无双十三面
+  fourConcealedTripletsSingleWait, // 四暗刻单骑
+  bigFourWinds, // 大四喜
+  nineGatesPure, // 纯正九连宝灯
 }
