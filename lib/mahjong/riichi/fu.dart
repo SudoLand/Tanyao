@@ -1,5 +1,5 @@
 import 'package:tanyao/mahjong/set/base.dart';
 
-int calculateRiichiRegularFu(List<MahjongSet> mahjongSets) {
+int calculateRiichiMahjongRegularSetsFu(List<MahjongSet> mahjongSets) {
   return 0;
 }
