@@ -69,6 +69,10 @@ class MahjongTracePossibleResult {
 
     final String handString = this.hand.toString();
 
+    if (handString.isEmpty) {
+      return setString;
+    }
+
     return "$setString($handString)";
   }
 }

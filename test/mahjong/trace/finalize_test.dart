@@ -27,5 +27,18 @@ void main() {
     expect(results[0].hand.toString(), equals(''));
     expect(results[0].mahjongSets.length, equals(6));
   });
+
+  // test('finalize result - double possible', () {
+  //   final List<MahjongTracePossibleResult> results =
+  //       finalizeMahjongPossibleResults(
+  //     MahjongHand.fromString('1s1s1s2s2s2s3s3s3s1p2p3pnono'),
+  //   );
+
+  //   print(results);
+
+  //   expect(results.length, equals(1));
+  //   expect(results[0].hand.toString(), equals(''));
+  //   expect(results[0].mahjongSets.length, equals(6));
+  // });
 }
 // spell-checker:enable
