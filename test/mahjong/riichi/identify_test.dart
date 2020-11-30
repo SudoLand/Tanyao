@@ -3,10 +3,9 @@ import 'package:tanyao/mahjong/riichi/identify.dart';
 import 'package:tanyao/mahjong/riichi/type.dart';
 import 'package:tanyao/mahjong/set/pair.dart';
 import 'package:tanyao/mahjong/tile.dart';
-import 'package:tanyao/mahjong/type.dart';
 
 void main() {
-  final MahjongTile northTile = MahjongTile(MahjongType.wind, 4);
+  final MahjongTile northTile = MahjongTile.north();
 
   test('identify invalid sets - empty', () {
     final RiichiResultType result = identifyRiichiMahjongSets([]);

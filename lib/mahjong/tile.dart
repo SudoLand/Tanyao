@@ -2,6 +2,39 @@ import 'package:tanyao/mahjong/type.dart';
 import 'package:tanyao/util/parse.dart';
 
 class MahjongTile {
+  factory MahjongTile.east() {
+    return MahjongTile(MahjongType.wind, 1);
+  }
+  factory MahjongTile.south() {
+    return MahjongTile(MahjongType.wind, 2);
+  }
+  factory MahjongTile.west() {
+    return MahjongTile(MahjongType.wind, 3);
+  }
+  factory MahjongTile.north() {
+    return MahjongTile(MahjongType.wind, 4);
+  }
+
+  factory MahjongTile.zhong() {
+    return MahjongTile(MahjongType.dragon, 1);
+  }
+  factory MahjongTile.fa() {
+    return MahjongTile(MahjongType.dragon, 2);
+  }
+  factory MahjongTile.bai() {
+    return MahjongTile(MahjongType.dragon, 3);
+  }
+
+  factory MahjongTile.dot(int value) {
+    return MahjongTile(MahjongType.dot, value);
+  }
+  factory MahjongTile.bamboo(int value) {
+    return MahjongTile(MahjongType.bamboo, value);
+  }
+  factory MahjongTile.character(int value) {
+    return MahjongTile(MahjongType.character, value);
+  }
+
   factory MahjongTile.fromString(String target) {
     if (target.length != 2) {
       return null;
@@ -9,19 +42,19 @@ class MahjongTile {
 
     switch (target) {
       case 'ea':
-        return MahjongTile(MahjongType.wind, 1);
+        return MahjongTile.east();
       case 'so':
-        return MahjongTile(MahjongType.wind, 2);
+        return MahjongTile.south();
       case 'we':
-        return MahjongTile(MahjongType.wind, 3);
+        return MahjongTile.west();
       case 'no':
-        return MahjongTile(MahjongType.wind, 4);
+        return MahjongTile.north();
       case 'zh':
-        return MahjongTile(MahjongType.dragon, 1);
+        return MahjongTile.zhong();
       case 'fa':
-        return MahjongTile(MahjongType.dragon, 2);
+        return MahjongTile.fa();
       case 'ba':
-        return MahjongTile(MahjongType.dragon, 3);
+        return MahjongTile.bai();
     }
 
     final int value = tryParseInt(target[0]);
@@ -32,11 +65,11 @@ class MahjongTile {
 
     switch (target[1]) {
       case 'p':
-        return MahjongTile(MahjongType.dot, value);
+        return MahjongTile.dot(value);
       case 's':
-        return MahjongTile(MahjongType.bamboo, value);
+        return MahjongTile.bamboo(value);
       case 'w':
-        return MahjongTile(MahjongType.character, value);
+        return MahjongTile.character(value);
     }
 
     return null;
@@ -45,7 +78,7 @@ class MahjongTile {
   static List<MahjongTile> getAvailableDots() {
     final List<MahjongTile> tiles = [];
     for (int i = 1; i <= 9; i++) {
-      tiles.add(MahjongTile(MahjongType.dot, i));
+      tiles.add(MahjongTile.dot(i));
     }
     return tiles;
   }
@@ -53,7 +86,7 @@ class MahjongTile {
   static List<MahjongTile> getAvailableBamboos() {
     final List<MahjongTile> tiles = [];
     for (int i = 1; i <= 9; i++) {
-      tiles.add(MahjongTile(MahjongType.bamboo, i));
+      tiles.add(MahjongTile.bamboo(i));
     }
     return tiles;
   }
@@ -61,7 +94,7 @@ class MahjongTile {
   static List<MahjongTile> getAvailableCharacters() {
     final List<MahjongTile> tiles = [];
     for (int i = 1; i <= 9; i++) {
-      tiles.add(MahjongTile(MahjongType.character, i));
+      tiles.add(MahjongTile.character(i));
     }
     return tiles;
   }

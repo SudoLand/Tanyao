@@ -11,4 +11,8 @@ class MahjongTripletSet extends MahjongSet {
             tile.clone(),
           ],
         );
+
+  bool compareTile(MahjongTile tile) {
+    return true;
+  }
 }

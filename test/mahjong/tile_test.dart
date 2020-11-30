@@ -34,7 +34,7 @@ void main() {
   });
 
   test('can add with operator + - happy', () {
-    final MahjongTile tile = MahjongTile(MahjongType.bamboo, 2);
+    final MahjongTile tile = MahjongTile.bamboo(2);
     expect((tile + 1).toString(), equals('3s'));
   });
 }
