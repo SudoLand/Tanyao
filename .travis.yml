@@ -1,4 +1,7 @@
-language: shell
+language: node_js
+
+node_js:
+  - "14"
 
 os:
   - linux
@@ -13,6 +16,9 @@ addons:
       - libstdc++6
       - fonts-droid-fallback
 
+install:
+  - npm install codecov -g
+
 before_script:
   - git clone https://github.com/flutter/flutter.git -b beta
   - ./flutter/bin/flutter doctor
@@ -23,3 +29,6 @@ script:
 cache:
   directories:
     - $HOME/.pub-cache
+
+after_success:
+  - codecov -f ./coverage/lcov.info

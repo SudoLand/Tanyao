@@ -19,6 +19,7 @@
         "codecov",
         "cupertino",
         "interps",
+        "lcov",
         "libstdc",
         "macos",
         "mailto",
