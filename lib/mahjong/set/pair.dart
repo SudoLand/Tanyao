@@ -2,12 +2,18 @@ import 'package:tanyao/mahjong/set/base.dart';
 import 'package:tanyao/mahjong/tile.dart';
 
 class MahjongPairSet extends MahjongSet {
+  final MahjongTile singletonTile;
+
   MahjongPairSet(
-    MahjongTile tile,
+    this.singletonTile,
   ) : super(
           [
-            tile.clone(),
-            tile.clone(),
+            singletonTile.clone(),
+            singletonTile.clone(),
           ],
         );
+
+  bool compareTile(MahjongTile tile) {
+    return this.singletonTile == tile;
+  }
 }

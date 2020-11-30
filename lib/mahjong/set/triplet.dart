@@ -3,10 +3,12 @@ import 'package:tanyao/mahjong/tile.dart';
 
 class MahjongTripletSet extends MahjongSet {
   final MahjongTile singletonTile;
+  final bool concealed;
 
   MahjongTripletSet(
-    this.singletonTile,
-  ) : super(
+    this.singletonTile, {
+    this.concealed = false,
+  }) : super(
           [
             singletonTile.clone(),
             singletonTile.clone(),
