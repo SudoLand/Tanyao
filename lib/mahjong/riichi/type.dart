@@ -8,7 +8,7 @@ enum RiichiYakuType {
   // Spacial
   riichi, // 1 立直
   sevenPairs, // 2 七对子
-  nagashiMangan, // mangan 流局满贯
+  nagashiMangan, // 流局满贯
 
   // Luck
   selfPick, // 1 门前清自摸和
@@ -17,6 +17,9 @@ enum RiichiYakuType {
   lastDiscard, // 1 河底捞鱼
   deadWall, // 1 岭上开花
   robbingQuad, // 1 抢杠
+  dora, // 1 宝牌
+  redDora, // 1 红宝牌
+  underDora, // 1 里宝牌
   doubleRiichi, // 2 双立直
 
   // Regulars
