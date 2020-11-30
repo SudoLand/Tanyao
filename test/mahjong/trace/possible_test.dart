@@ -34,5 +34,16 @@ void main() {
     expect(results[1].mahjongSets.length, equals(1));
     expect(results[1].mahjongSets[0].toString(), equals('1s,1s,1s'));
   });
+
+  test('possible result can find next - complex 1', () {
+    final MahjongTracePossibleResult target = MahjongTracePossibleResult(
+      MahjongHand.fromString('1s1s1s2s2s2s3s3s3s'),
+      [],
+    );
+
+    final List<MahjongTracePossibleResult> results = target.findNext();
+
+    expect(results.length, equals(3));
+  });
 }
 // spell-checker:enable
