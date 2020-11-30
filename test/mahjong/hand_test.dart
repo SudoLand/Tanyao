@@ -7,6 +7,7 @@ void main() {
     final MahjongHand hand = MahjongHand.fromString('ea');
     expect(hand.toString(), equals('east'));
   });
+
   test('can initialize hand with string - 2', () {
     final MahjongHand hand = MahjongHand.fromString('2s2s3peanoba');
     expect(hand.toString(), equals('3p,2s,2s,east,north,bai'));
