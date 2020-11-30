@@ -25,7 +25,7 @@ void main() {
 
     expect(results.length, equals(1));
     expect(results[0].hand.toString(), equals(''));
-    expect(results[0].mahjongSets.length, equals(6));
+    expect(results[0].mahjongSets.length, equals(5));
   });
 
   test('finalize result - double possible', () {
