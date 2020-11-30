@@ -40,7 +40,8 @@ List<MahjongSet> findMahjongFirstAvailableCombos(
       return possibleSets;
     }
 
-    if (hand.getTileCount(target + 1) >= 1 &&
+    if (hand.getTileCount(target) >= 1 &&
+        hand.getTileCount(target + 1) >= 1 &&
         hand.getTileCount(target + 2) >= 1) {
       possibleSets.add(MahjongSequenceSet([
         target,
