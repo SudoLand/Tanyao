@@ -16,7 +16,7 @@ List<MahjongTracePossibleResult> finalizeMahjongPossibleResults(
     final List<MahjongTracePossibleResult> iteratedResults =
         firstResult.findNext();
 
-    if (firstResult.finalized) {
+    if (firstResult.isGoodFinalized()) {
       finalizedResults.add(firstResult);
     }
 

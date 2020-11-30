@@ -11,6 +11,10 @@ class MahjongTracePossibleResult {
 
   MahjongTracePossibleResult(this.hand, this.mahjongSets);
 
+  bool isGoodFinalized() {
+    return this.finalized && this.hand.getTotalTileCount() == 0;
+  }
+
   List<MahjongTracePossibleResult> findNext() {
     final MahjongHand cloneHand = this.hand.clone();
     final List<MahjongTracePossibleResult> nextResults = [];
@@ -50,5 +54,16 @@ class MahjongTracePossibleResult {
       this.hand.clone(),
       newSet,
     );
+  }
+
+  String toString() {
+    final String setString = this
+        .mahjongSets
+        .map((MahjongSet currentSet) => "[${currentSet.toString()}]")
+        .join(',');
+
+    final String handString = this.hand.toString();
+
+    return "$setString($handString)";
   }
 }
