@@ -1,12 +1,12 @@
 import 'package:tanyao/mahjong/riichi/type.dart';
-import 'package:tanyao/mahjong/riichi/yaku/all-green.dart';
-import 'package:tanyao/mahjong/riichi/yaku/all-honors.dart';
-import 'package:tanyao/mahjong/riichi/yaku/all-terminals.dart';
-import 'package:tanyao/mahjong/riichi/yaku/four-concealed-triplets.dart';
-import 'package:tanyao/mahjong/riichi/yaku/four-winds.dart';
-import 'package:tanyao/mahjong/riichi/yaku/nine-gates.dart';
-import 'package:tanyao/mahjong/riichi/yaku/thirteen-orphans.dart';
-import 'package:tanyao/mahjong/riichi/yaku/three-dragons.dart';
+import 'package:tanyao/mahjong/riichi/yaku/yakuman/all-green.dart';
+import 'package:tanyao/mahjong/riichi/yaku/yakuman/all-honors.dart';
+import 'package:tanyao/mahjong/riichi/yaku/yakuman/all-terminals.dart';
+import 'package:tanyao/mahjong/riichi/yaku/yakuman/four-concealed-triplets.dart';
+import 'package:tanyao/mahjong/riichi/yaku/yakuman/four-winds.dart';
+import 'package:tanyao/mahjong/riichi/yaku/yakuman/nine-gates.dart';
+import 'package:tanyao/mahjong/riichi/yaku/yakuman/thirteen-orphans.dart';
+import 'package:tanyao/mahjong/riichi/yaku/yakuman/big-three-dragons.dart';
 import 'package:tanyao/mahjong/set/base.dart';
 
 List<RiichiYakuType> analysisRiichiMahjongSevenPairsSetsYaku(

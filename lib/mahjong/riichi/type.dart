@@ -22,7 +22,7 @@ enum RiichiYakuType {
   underDora, // 1 里宝牌
   doubleRiichi, // 2 双立直
 
-  // Regulars
+  // Regular
   noPoints, // 1 平和
   oneSetIdentical, // 1 一杯口
   threeColourStraight, // 1 三色同顺
