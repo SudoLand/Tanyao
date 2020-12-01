@@ -1,15 +1,37 @@
 import 'package:tanyao/mahjong/riichi/type.dart';
 
-int getRegularRiichiYakuFan(RiichiYakuType yakuType) {
+int getRegularRiichiYakuFan(
+  RiichiYakuType yakuType, {
+  bool clearGate = true,
+}) {
   final int yakuFan = riichiYakuFan[yakuType];
 
-  if (yakuFan is int) {
+  if (!(yakuFan is int)) {
+    return 0;
+  }
+
+  if (clearGate) {
     return yakuFan;
   }
 
-  return 0;
+  if (yakuType == RiichiYakuType.terminalHonorEachSet ||
+      yakuType == RiichiYakuType.terminalEachSet ||
+      yakuType == RiichiYakuType.halfFlush ||
+      yakuType == RiichiYakuType.flush) {
+    return yakuFan - 1;
+  }
+
+  return yakuFan;
 }
 
-int calculateRiichiYakuFan(List<RiichiYakuType> yakuTypes) {
-  return 0;
+int calculateRegularRiichiYakuFan(List<RiichiYakuType> yakuTypes) {
+  int yakuFan = 0;
+
+  for (RiichiYakuType yakuType in yakuTypes) {
+    final int currentYakuFan = getRegularRiichiYakuFan(yakuType);
+
+    yakuFan += currentYakuFan;
+  }
+
+  return yakuFan;
 }
