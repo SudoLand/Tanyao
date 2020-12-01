@@ -17,35 +17,46 @@ List<RiichiYakuType> analysisRiichiMahjongSevenPairsSetsYaku(
   ];
 }
 
+List<RiichiYakuType> analysisRiichiMahjongYakumanSetsYaku(
+  List<MahjongSet> mahjongSets,
+) {
+  final List<RiichiYakuType> yakumanSets = [];
+
+  if (isRiichiAllGreen(mahjongSets)) {
+    yakumanSets.add(RiichiYakuType.allGreen);
+  }
+  if (isRiichiAllHonors(mahjongSets)) {
+    yakumanSets.add(RiichiYakuType.allHonors);
+  }
+  if (isRiichiAllTerminals(mahjongSets)) {
+    yakumanSets.add(RiichiYakuType.allTerminals);
+  }
+  if (isRiichiFourConcealedTriplets(mahjongSets)) {
+    yakumanSets.add(RiichiYakuType.fourConcealedTriplets);
+  }
+  if (isRiichiBigFourWinds(mahjongSets)) {
+    yakumanSets.add(RiichiYakuType.bigFourWinds);
+  }
+  if (isRiichiLittleFourWinds(mahjongSets)) {
+    yakumanSets.add(RiichiYakuType.littleFourWinds);
+  }
+  if (isRiichiNineGates(mahjongSets)) {
+    yakumanSets.add(RiichiYakuType.nineGates);
+  }
+  if (isRiichiThirteenOrphans(mahjongSets)) {
+    yakumanSets.add(RiichiYakuType.thirteenOrphans);
+  }
+  if (isRiichiBigThreeDragons(mahjongSets)) {
+    yakumanSets.add(RiichiYakuType.bigThreeDragons);
+  }
+
+  return yakumanSets;
+}
+
 List<RiichiYakuType> analysisRiichiMahjongRegularSetsYaku(
   List<MahjongSet> mahjongSets,
 ) {
-  if (isRiichiAllGreen(mahjongSets)) {
-    return [RiichiYakuType.allGreen];
-  }
-  if (isRiichiAllHonors(mahjongSets)) {
-    return [RiichiYakuType.allHonors];
-  }
-  if (isRiichiAllTerminals(mahjongSets)) {
-    return [RiichiYakuType.allTerminals];
-  }
-  if (isRiichiFourConcealedTriplets(mahjongSets)) {
-    return [RiichiYakuType.fourConcealedTriplets];
-  }
-  if (isRiichiBigFourWinds(mahjongSets)) {
-    return [RiichiYakuType.bigFourWinds];
-  }
-  if (isRiichiLittleFourWinds(mahjongSets)) {
-    return [RiichiYakuType.littleFourWinds];
-  }
-  if (isRiichiNineGates(mahjongSets)) {
-    return [RiichiYakuType.nineGates];
-  }
-  if (isRiichiThirteenOrphans(mahjongSets)) {
-    return [RiichiYakuType.thirteenOrphans];
-  }
-  if (isRiichiBigThreeDragons(mahjongSets)) {
-    return [RiichiYakuType.bigThreeDragons];
-  }
-  return [];
+  final List<RiichiYakuType> regularSets = [];
+
+  return regularSets;
 }

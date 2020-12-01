@@ -24,11 +24,17 @@ int getRegularRiichiYakuFan(
   return yakuFan;
 }
 
-int calculateRegularRiichiYakuFan(List<RiichiYakuType> yakuTypes) {
+int calculateRegularRiichiYakuFan(
+  List<RiichiYakuType> yakuTypes, {
+  bool clearGate = true,
+}) {
   int yakuFan = 0;
 
   for (RiichiYakuType yakuType in yakuTypes) {
-    final int currentYakuFan = getRegularRiichiYakuFan(yakuType);
+    final int currentYakuFan = getRegularRiichiYakuFan(
+      yakuType,
+      clearGate: clearGate,
+    );
 
     yakuFan += currentYakuFan;
   }
