@@ -1,9 +1,8 @@
 import 'package:tanyao/mahjong/set/base.dart';
-import 'package:tanyao/mahjong/set/pair.dart';
 import 'package:tanyao/mahjong/set/triplet.dart';
 import 'package:tanyao/mahjong/tile.dart';
 
-bool isBigThreeDragons(
+bool isRiichiBigThreeDragons(
   List<MahjongSet> mahjongSets,
 ) {
   bool zhong = false;

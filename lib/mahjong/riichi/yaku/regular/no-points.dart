@@ -1,6 +1,6 @@
 import 'package:tanyao/mahjong/set/base.dart';
 
-bool isRiichiThirteenOrphans(
+bool isRiichiNoPoints(
   List<MahjongSet> mahjongSets,
 ) {
   return false;

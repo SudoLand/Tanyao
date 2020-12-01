@@ -3,7 +3,7 @@ import 'package:tanyao/mahjong/set/pair.dart';
 import 'package:tanyao/mahjong/set/triplet.dart';
 import 'package:tanyao/mahjong/tile.dart';
 
-bool isBigFourWinds(
+bool isRiichiBigFourWinds(
   List<MahjongSet> mahjongSets,
 ) {
   bool east = false;
@@ -37,7 +37,7 @@ bool isBigFourWinds(
   return east && south && west && north;
 }
 
-bool isLittleFourWinds(
+bool isRiichiLittleFourWinds(
   List<MahjongSet> mahjongSets,
 ) {
   int tripletCount = 0;

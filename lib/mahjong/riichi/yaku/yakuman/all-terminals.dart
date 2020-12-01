@@ -1,7 +1,7 @@
 import 'package:tanyao/mahjong/set/base.dart';
 import 'package:tanyao/mahjong/tile.dart';
 
-bool isAllTerminals(
+bool isRiichiAllTerminals(
   List<MahjongSet> mahjongSets,
 ) {
   for (MahjongSet mahjongSet in mahjongSets) {

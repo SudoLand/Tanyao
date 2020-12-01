@@ -1,6 +1,6 @@
 import 'package:tanyao/mahjong/set/base.dart';
 
-bool isNineGates(
+bool isRiichiNineGates(
   List<MahjongSet> mahjongSets,
 ) {
   return false;

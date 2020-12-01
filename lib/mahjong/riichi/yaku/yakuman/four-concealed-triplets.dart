@@ -2,7 +2,7 @@ import 'package:tanyao/mahjong/set/base.dart';
 import 'package:tanyao/mahjong/set/sequence.dart';
 import 'package:tanyao/mahjong/set/triplet.dart';
 
-bool isFourConcealedTriplets(
+bool isRiichiFourConcealedTriplets(
   List<MahjongSet> mahjongSets,
 ) {
   int tripletCount = 0;

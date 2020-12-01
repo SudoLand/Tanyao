@@ -4,7 +4,7 @@ import 'package:tanyao/mahjong/set/triplet.dart';
 import 'package:tanyao/mahjong/tile.dart';
 
 /// Not Yakuman
-bool isLittleThreeDragons(
+bool isRiichiLittleThreeDragons(
   List<MahjongSet> mahjongSets,
 ) {
   int tripletCount = 0;

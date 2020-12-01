@@ -78,7 +78,9 @@ class _CoreLocalizationsDelegate
   const _CoreLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => ['en', 'zh'].contains(locale.languageCode);
+  bool isSupported(Locale locale) {
+    return ['en', 'zh'].contains(locale.languageCode);
+  }
 
   @override
   Future<CoreLocalizations> load(Locale locale) {

@@ -20,31 +20,31 @@ List<RiichiYakuType> analysisRiichiMahjongSevenPairsSetsYaku(
 List<RiichiYakuType> analysisRiichiMahjongRegularSetsYaku(
   List<MahjongSet> mahjongSets,
 ) {
-  if (isAllGreen(mahjongSets)) {
+  if (isRiichiAllGreen(mahjongSets)) {
     return [RiichiYakuType.allGreen];
   }
-  if (isAllHonors(mahjongSets)) {
+  if (isRiichiAllHonors(mahjongSets)) {
     return [RiichiYakuType.allHonors];
   }
-  if (isAllTerminals(mahjongSets)) {
+  if (isRiichiAllTerminals(mahjongSets)) {
     return [RiichiYakuType.allTerminals];
   }
-  if (isFourConcealedTriplets(mahjongSets)) {
+  if (isRiichiFourConcealedTriplets(mahjongSets)) {
     return [RiichiYakuType.fourConcealedTriplets];
   }
-  if (isBigFourWinds(mahjongSets)) {
+  if (isRiichiBigFourWinds(mahjongSets)) {
     return [RiichiYakuType.bigFourWinds];
   }
-  if (isLittleFourWinds(mahjongSets)) {
+  if (isRiichiLittleFourWinds(mahjongSets)) {
     return [RiichiYakuType.littleFourWinds];
   }
-  if (isNineGates(mahjongSets)) {
+  if (isRiichiNineGates(mahjongSets)) {
     return [RiichiYakuType.nineGates];
   }
-  if (isThirteenOrphans(mahjongSets)) {
+  if (isRiichiThirteenOrphans(mahjongSets)) {
     return [RiichiYakuType.thirteenOrphans];
   }
-  if (isBigThreeDragons(mahjongSets)) {
+  if (isRiichiBigThreeDragons(mahjongSets)) {
     return [RiichiYakuType.bigThreeDragons];
   }
   return [];
