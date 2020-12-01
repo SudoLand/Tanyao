@@ -15,13 +15,21 @@ bool isBigFourWinds(
     if (mahjongSet is MahjongTripletSet) {
       final MahjongTripletSet castedMahjongSet = mahjongSet;
 
-      if (castedMahjongSet.compareTile(MahjongTile.east())) {
+      if (castedMahjongSet.compareTile(
+        MahjongTile.east(),
+      )) {
         east = true;
-      } else if (castedMahjongSet.compareTile(MahjongTile.south())) {
+      } else if (castedMahjongSet.compareTile(
+        MahjongTile.south(),
+      )) {
         south = true;
-      } else if (castedMahjongSet.compareTile(MahjongTile.west())) {
+      } else if (castedMahjongSet.compareTile(
+        MahjongTile.west(),
+      )) {
         west = true;
-      } else if (castedMahjongSet.compareTile(MahjongTile.north())) {
+      } else if (castedMahjongSet.compareTile(
+        MahjongTile.north(),
+      )) {
         north = true;
       }
     }
