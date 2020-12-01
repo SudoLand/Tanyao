@@ -37,7 +37,7 @@ bool isBigFourWinds(
   return east && south && west && north;
 }
 
-bool isSmallFourWinds(
+bool isLittleFourWinds(
   List<MahjongSet> mahjongSets,
 ) {
   int tripletCount = 0;

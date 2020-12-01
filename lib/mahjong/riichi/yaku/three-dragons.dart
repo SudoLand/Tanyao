@@ -32,7 +32,8 @@ bool isBigThreeDragons(
   return zhong && fa && bai;
 }
 
-bool isSmallThreeDragons(
+/// Not Yakuman
+bool isLittleThreeDragons(
   List<MahjongSet> mahjongSets,
 ) {
   int tripletCount = 0;
