@@ -1,7 +1,15 @@
 import 'package:tanyao/mahjong/set/base.dart';
+import 'package:tanyao/mahjong/tile.dart';
 
 bool isAllTerminals(
   List<MahjongSet> mahjongSets,
 ) {
-  return false;
+  for (MahjongSet mahjongSet in mahjongSets) {
+    for (MahjongTile tile in mahjongSet.tiles) {
+      if (!tile.isTerminal) {
+        return false;
+      }
+    }
+  }
+  return true;
 }

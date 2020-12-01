@@ -8,7 +8,7 @@ class MahjongTripletSet extends MahjongSet {
 
   MahjongTripletSet(
     this.singletonTile, {
-    this.concealed = false,
+    this.concealed = true,
     this.kan = false,
   }) : super(
           [

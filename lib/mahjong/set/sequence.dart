@@ -6,6 +6,6 @@ class MahjongSequenceSet extends MahjongSet {
 
   MahjongSequenceSet(
     List<MahjongTile> tiles, {
-    this.concealed = false,
+    this.concealed = true,
   }) : super(tiles);
 }
