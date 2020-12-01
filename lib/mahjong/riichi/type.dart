@@ -61,3 +61,44 @@ enum RiichiYakuType {
   bigFourWinds, // 大四喜
   nineGatesPure, // 纯正九连宝灯
 }
+
+Map<RiichiYakuType, int> riichiYakuFan = {
+  // Spacial
+  RiichiYakuType.riichi: 1,
+  RiichiYakuType.sevenPairs: 2,
+
+  // Luck
+  RiichiYakuType.selfPick: 1,
+  RiichiYakuType.oneShot: 1,
+  RiichiYakuType.lastTile: 1,
+  RiichiYakuType.lastDiscard: 1,
+  RiichiYakuType.deadWall: 1,
+  RiichiYakuType.robbingQuad: 1,
+  RiichiYakuType.dora: 1,
+  RiichiYakuType.redDora: 1,
+  RiichiYakuType.underDora: 1,
+  RiichiYakuType.doubleRiichi: 2,
+
+  // Regular
+  RiichiYakuType.noPoints: 1,
+  RiichiYakuType.oneSetIdentical: 1,
+  RiichiYakuType.threeColourStraight: 1,
+  RiichiYakuType.tanyao: 1,
+  RiichiYakuType.yakuZhong: 1,
+  RiichiYakuType.yakuFa: 1,
+  RiichiYakuType.yakuBai: 1,
+  RiichiYakuType.yakuPrevailing: 1,
+  RiichiYakuType.yakuPlayer: 1,
+  RiichiYakuType.straight: 2,
+  RiichiYakuType.allTriplet: 2,
+  RiichiYakuType.threeClosedTriplets: 2,
+  RiichiYakuType.threeColourTriplets: 2,
+  RiichiYakuType.threeKans: 2,
+  RiichiYakuType.terminalHonorEachSet: 2,
+  RiichiYakuType.terminalAndHonors: 2,
+  RiichiYakuType.littleThreeDragons: 2,
+  RiichiYakuType.twoSetIdentical: 3,
+  RiichiYakuType.terminalEachSet: 3,
+  RiichiYakuType.halfFlush: 3,
+  RiichiYakuType.flush: 6,
+};

@@ -1,9 +1,15 @@
 import 'package:tanyao/mahjong/riichi/type.dart';
 
-int getRiichiFan(RiichiYakuType yakuType) {
+int getRegularRiichiYakuFan(RiichiYakuType yakuType) {
+  final int yakuFan = riichiYakuFan[yakuType];
+
+  if (yakuFan is int) {
+    return yakuFan;
+  }
+
   return 0;
 }
 
-int calculateRiichiFan(List<RiichiYakuType> yakuTypes) {
+int calculateRiichiYakuFan(List<RiichiYakuType> yakuTypes) {
   return 0;
 }
