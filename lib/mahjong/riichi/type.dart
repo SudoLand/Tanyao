@@ -34,7 +34,7 @@ enum RiichiYakuType {
   yakuPlayer, // 1 役牌-门风
   straight, // 2 一气通贯
   allTriplets, // 2 对对和
-  threeClosedTriplets, // 2 三暗刻
+  threeConcealedTriplets, // 2 三暗刻
   threeColourTriplets, // 2 三色同刻
   threeKans, // 2 三杠子
   terminalHonorEachSet, // 2,1 混全带幺九
@@ -91,7 +91,7 @@ Map<RiichiYakuType, int> riichiYakuFan = {
   RiichiYakuType.yakuPlayer: 1,
   RiichiYakuType.straight: 2,
   RiichiYakuType.allTriplets: 2,
-  RiichiYakuType.threeClosedTriplets: 2,
+  RiichiYakuType.threeConcealedTriplets: 2,
   RiichiYakuType.threeColourTriplets: 2,
   RiichiYakuType.threeKans: 2,
   RiichiYakuType.terminalHonorEachSet: 2,
