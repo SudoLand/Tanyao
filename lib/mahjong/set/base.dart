@@ -14,6 +14,42 @@ abstract class MahjongSet {
     return this.hashCode == other.hashCode;
   }
 
+  bool get isBamboo {
+    return this.tiles.every((MahjongTile tile) => tile.isBamboo);
+  }
+
+  bool get isDot {
+    return this.tiles.every((MahjongTile tile) => tile.isDot);
+  }
+
+  bool get isCharacter {
+    return this.tiles.every((MahjongTile tile) => tile.isCharacter);
+  }
+
+  bool get isNumeric {
+    return this.tiles.every((MahjongTile tile) => tile.isNumeric);
+  }
+
+  bool get isWind {
+    return this.tiles.every((MahjongTile tile) => tile.isWind);
+  }
+
+  bool get isDragon {
+    return this.tiles.every((MahjongTile tile) => tile.isDragon);
+  }
+
+  bool get isTerminal {
+    return this.tiles.any((MahjongTile tile) => tile.isTerminal);
+  }
+
+  bool get isHonor {
+    return this.tiles.any((MahjongTile tile) => tile.isHonor);
+  }
+
+  bool get isTerminalHonor {
+    return this.tiles.any((MahjongTile tile) => tile.isTerminalHonor);
+  }
+
   String toString() {
     return tiles.map((MahjongTile tile) => tile.toString()).join(',');
   }
