@@ -17,4 +17,18 @@ void main() {
       ),
     );
   });
+
+  test('calculate regular basic with seven pairs', () {
+    final RiichiPointResult basicPoint = analysisRiichiPoint(3, 25);
+
+    expect(
+      basicPoint,
+      equals(
+        RiichiPointResult(
+          RiichiPointType.regular,
+          800,
+        ),
+      ),
+    );
+  });
 }

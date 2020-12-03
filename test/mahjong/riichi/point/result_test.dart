@@ -19,4 +19,41 @@ void main() {
       ),
     );
   });
+
+  test('calculate dealer self pick', () {
+    final RiichiPointResult result = RiichiPointResult(
+      RiichiPointType.regular,
+      800,
+    );
+
+    expect(result.calculateDealerSelfPickReceive(), 1600);
+  });
+
+  test('calculate dealer discard', () {
+    final RiichiPointResult result = RiichiPointResult(
+      RiichiPointType.regular,
+      800,
+    );
+
+    expect(result.calculateDealerDiscardReceive(), 4800);
+  });
+
+  test('calculate non-dealer self pick', () {
+    final RiichiPointResult result = RiichiPointResult(
+      RiichiPointType.regular,
+      800,
+    );
+
+    expect(result.calculateNonDealerSelfPickDealerReceive(), 1600);
+    expect(result.calculateNonDealerSelfPickOtherReceive(), 800);
+  });
+
+  test('calculate non-dealer discard', () {
+    final RiichiPointResult result = RiichiPointResult(
+      RiichiPointType.regular,
+      800,
+    );
+
+    expect(result.calculateNonDealerDiscardReceive(), 3200);
+  });
 }

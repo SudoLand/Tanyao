@@ -39,6 +39,10 @@ class RiichiPointResult {
     return this._polyfillReceive(this.basicPoint * 6);
   }
 
+  String toString() {
+    return "${this.type.toString()}, ${this.basicPoint}";
+  }
+
   @override
   int get hashCode {
     return (this.type.index * 10000) + this.basicPoint;
