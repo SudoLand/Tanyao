@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
-import 'package:tanyao/routes/common/ink-well-card.dart';
+import 'package:tanyao/components/ink-well-card.dart';
 import 'package:tanyao/routes/tools/tile-input-tool.dart';
 
 class ToolsView extends StatelessWidget {

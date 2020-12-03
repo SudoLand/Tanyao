@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tanyao/routes/common/side-dialog.dart';
-import 'package:tanyao/routes/common/tile-count/riichi-tile-count-panel.dart';
+import 'package:tanyao/components/side-dialog.dart';
+import 'package:tanyao/components/tile-count/riichi-tile-count-panel.dart';
 
 void showTileCountDialog(
   BuildContext context, {
