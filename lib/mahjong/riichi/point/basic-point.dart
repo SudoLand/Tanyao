@@ -1,6 +1,6 @@
 import 'dart:math';
 
-int calculateRiichiBasicPoint(int fan, int fu) {
+int calculateRiichiRegularBasicPoint(int fan, int fu) {
   if (fan >= 11) {
     return 6000;
   }
@@ -24,8 +24,4 @@ int calculateRiichiBasicPoint(int fan, int fu) {
   }
 
   return basicPoint;
-}
-
-int calculateYakumanRiichiBasicPoint() {
-  return 8000;
 }
