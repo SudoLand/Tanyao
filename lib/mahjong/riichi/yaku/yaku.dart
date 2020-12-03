@@ -19,12 +19,13 @@ import 'package:tanyao/mahjong/riichi/yaku/regular/yaku.dart';
 import 'package:tanyao/mahjong/riichi/yaku/yakuman/all-green.dart';
 import 'package:tanyao/mahjong/riichi/yaku/yakuman/all-honors.dart';
 import 'package:tanyao/mahjong/riichi/yaku/yakuman/all-terminals.dart';
+import 'package:tanyao/mahjong/riichi/yaku/yakuman/big-three-dragons.dart';
 import 'package:tanyao/mahjong/riichi/yaku/yakuman/four-concealed-triplets.dart';
 import 'package:tanyao/mahjong/riichi/yaku/yakuman/four-winds.dart';
 import 'package:tanyao/mahjong/riichi/yaku/yakuman/nine-gates.dart';
 import 'package:tanyao/mahjong/riichi/yaku/yakuman/thirteen-orphans.dart';
-import 'package:tanyao/mahjong/riichi/yaku/yakuman/big-three-dragons.dart';
 import 'package:tanyao/mahjong/set/base.dart';
+import 'package:tanyao/mahjong/tile.dart';
 
 List<RiichiYakuType> analysisRiichiMahjongSevenPairsSetsYaku(
   List<MahjongSet> mahjongSets,
@@ -71,8 +72,10 @@ List<RiichiYakuType> analysisRiichiMahjongYakumanSetsYaku(
 }
 
 List<RiichiYakuType> analysisRiichiMahjongRegularSetsYaku(
-  List<MahjongSet> mahjongSets,
-) {
+  List<MahjongSet> mahjongSets, {
+  MahjongTile prevailingTile,
+  MahjongTile playerTile,
+}) {
   final List<RiichiYakuType> regularSets = [];
 
   if (isRiichiAllTriplets(mahjongSets)) {
@@ -134,11 +137,17 @@ List<RiichiYakuType> analysisRiichiMahjongRegularSetsYaku(
   if (isRiichiYakuZhong(mahjongSets)) {
     regularSets.add(RiichiYakuType.yakuZhong);
   }
-  if (isRiichiYakuPlayer(mahjongSets)) {
-    regularSets.add(RiichiYakuType.yakuPlayer);
+
+  if (prevailingTile is MahjongTile) {
+    if (isRiichiYakuPrevailing(mahjongSets, prevailingTile)) {
+      regularSets.add(RiichiYakuType.yakuPrevailing);
+    }
   }
-  if (isRiichiYakuPrevailing(mahjongSets)) {
-    regularSets.add(RiichiYakuType.yakuPrevailing);
+
+  if (playerTile is MahjongTile) {
+    if (isRiichiYakuPlayer(mahjongSets, playerTile)) {
+      regularSets.add(RiichiYakuType.yakuPlayer);
+    }
   }
 
   return regularSets;
