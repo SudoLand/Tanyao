@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:tanyao/mahjong/riichi/point.dart';
+import 'package:tanyao/mahjong/riichi/basic-point.dart';
 
 void main() {
   test('calculate basic point', () {
