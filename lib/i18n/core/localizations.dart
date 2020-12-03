@@ -28,9 +28,9 @@ class CoreLocalizations {
   }
 
   String getString(
-    String key, [
+    String key, {
     Map<String, String> replacements,
-  ]) {
+  }) {
     String value = this._stringMap[key];
 
     if (value == null) {
@@ -66,7 +66,7 @@ class CoreLocalizations {
     return Text(
       this.getString(
         key,
-        replacements,
+        replacements: replacements,
       ),
       style: style,
     );
