@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanyao/mahjong/tile.dart';
-import 'package:tanyao/routes/common/tile/tile-button.dart';
+import 'package:tanyao/components/tile/tile-button.dart';
 
 class TileInputView extends StatefulWidget {
   final void Function(MahjongTile tile) onPressed;

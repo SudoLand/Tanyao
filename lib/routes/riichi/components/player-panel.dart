@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tanyao/components/tile-count/show-tile-count-dialog.dart';
 import 'package:tanyao/entity/player.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
-import 'package:tanyao/routes/common/tile-count/show-tile-count-dialog.dart';
 
 class PlayerPanelView extends StatelessWidget {
   final int quarterTurns;
