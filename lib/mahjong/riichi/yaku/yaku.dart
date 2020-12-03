@@ -107,6 +107,7 @@ List<RiichiYakuType> analysisRiichiMahjongRegularSetsYaku(
   if (isRiichiTanyao(mahjongSets)) {
     regularSets.add(RiichiYakuType.tanyao);
   }
+
   if (isRiichiTerminalEachSet(mahjongSets)) {
     regularSets.add(RiichiYakuType.terminalEachSet);
   } else if (isRiichiTerminalAndHonors(mahjongSets)) {
@@ -128,14 +129,14 @@ List<RiichiYakuType> analysisRiichiMahjongRegularSetsYaku(
     regularSets.add(RiichiYakuType.threeKans);
   }
 
+  if (isRiichiYakuZhong(mahjongSets)) {
+    regularSets.add(RiichiYakuType.yakuZhong);
+  }
   if (isRiichiYakuBai(mahjongSets)) {
     regularSets.add(RiichiYakuType.yakuBai);
   }
   if (isRiichiYakuFa(mahjongSets)) {
     regularSets.add(RiichiYakuType.yakuFa);
-  }
-  if (isRiichiYakuZhong(mahjongSets)) {
-    regularSets.add(RiichiYakuType.yakuZhong);
   }
 
   if (prevailingTile is MahjongTile) {
