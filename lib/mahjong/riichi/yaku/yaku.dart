@@ -1,4 +1,21 @@
 import 'package:tanyao/mahjong/riichi/type.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/all-triplets.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/flush.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/half-flush.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/little-three-dragons.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/no-points.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/one-set-identical.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/straight.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/tanyao.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/terminal-and-honors.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/terminal-each-set.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/terminal-honor-each-set.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/three-colour-straight.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/three-colour-triplets.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/three-concealed-triplets.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/three-kans.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/two-set-identical.dart';
+import 'package:tanyao/mahjong/riichi/yaku/regular/yaku.dart';
 import 'package:tanyao/mahjong/riichi/yaku/yakuman/all-green.dart';
 import 'package:tanyao/mahjong/riichi/yaku/yakuman/all-honors.dart';
 import 'package:tanyao/mahjong/riichi/yaku/yakuman/all-terminals.dart';
@@ -57,6 +74,72 @@ List<RiichiYakuType> analysisRiichiMahjongRegularSetsYaku(
   List<MahjongSet> mahjongSets,
 ) {
   final List<RiichiYakuType> regularSets = [];
+
+  if (isRiichiAllTriplets(mahjongSets)) {
+    regularSets.add(RiichiYakuType.allTriplets);
+  }
+
+  if (isRiichiFlush(mahjongSets)) {
+    regularSets.add(RiichiYakuType.flush);
+  } else if (isRiichiHalfFlush(mahjongSets)) {
+    regularSets.add(RiichiYakuType.halfFlush);
+  }
+
+  if (isRiichiLittleThreeDragons(mahjongSets)) {
+    regularSets.add(RiichiYakuType.littleThreeDragons);
+  }
+  if (isRiichiNoPoints(mahjongSets)) {
+    regularSets.add(RiichiYakuType.noPoints);
+  }
+
+  if (isRiichiTwoSetIdentical(mahjongSets)) {
+    regularSets.add(RiichiYakuType.twoSetIdentical);
+  } else if (isRiichiOneSetIdentical(mahjongSets)) {
+    regularSets.add(RiichiYakuType.oneSetIdentical);
+  }
+
+  if (isRiichiStraight(mahjongSets)) {
+    regularSets.add(RiichiYakuType.straight);
+  }
+  if (isRiichiTanyao(mahjongSets)) {
+    regularSets.add(RiichiYakuType.tanyao);
+  }
+  if (isRiichiTerminalEachSet(mahjongSets)) {
+    regularSets.add(RiichiYakuType.terminalEachSet);
+  } else if (isRiichiTerminalAndHonors(mahjongSets)) {
+    regularSets.add(RiichiYakuType.terminalAndHonors);
+  } else if (isRiichiTerminalHonorEachSet(mahjongSets)) {
+    regularSets.add(RiichiYakuType.terminalHonorEachSet);
+  }
+
+  if (isRiichiThreeColourStraight(mahjongSets)) {
+    regularSets.add(RiichiYakuType.threeColourStraight);
+  }
+  if (isRiichiThreeColourTriplets(mahjongSets)) {
+    regularSets.add(RiichiYakuType.threeColourTriplets);
+  }
+  if (isRiichiThreeConcealedTriplets(mahjongSets)) {
+    regularSets.add(RiichiYakuType.threeConcealedTriplets);
+  }
+  if (isRiichiThreeKans(mahjongSets)) {
+    regularSets.add(RiichiYakuType.threeKans);
+  }
+
+  if (isRiichiYakuBai(mahjongSets)) {
+    regularSets.add(RiichiYakuType.yakuBai);
+  }
+  if (isRiichiYakuFa(mahjongSets)) {
+    regularSets.add(RiichiYakuType.yakuFa);
+  }
+  if (isRiichiYakuZhong(mahjongSets)) {
+    regularSets.add(RiichiYakuType.yakuZhong);
+  }
+  if (isRiichiYakuPlayer(mahjongSets)) {
+    regularSets.add(RiichiYakuType.yakuPlayer);
+  }
+  if (isRiichiYakuPrevailing(mahjongSets)) {
+    regularSets.add(RiichiYakuType.yakuPrevailing);
+  }
 
   return regularSets;
 }

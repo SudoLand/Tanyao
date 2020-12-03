@@ -1,7 +1,7 @@
 import 'package:tanyao/mahjong/set/base.dart';
 import 'package:tanyao/mahjong/set/triplet.dart';
 
-bool isRiichiThreeColourStraight(
+bool isRiichiThreeColourTriplets(
   List<MahjongSet> mahjongSets,
 ) {
   List<MahjongTripletSet> dotSets = [];
