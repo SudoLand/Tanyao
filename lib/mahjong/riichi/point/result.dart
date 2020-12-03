@@ -14,7 +14,22 @@ class RiichiPointResult {
     return this.hashCode == other.hashCode;
   }
 
-  /// Amount of every other player pay
+  /// Amount of dealer player should pay
+  int calculateNonDealerSelfPickDealerReceive() {
+    return this._polyfillReceive(this.basicPoint * 2);
+  }
+
+  /// Amount of other non-dealer players should pay
+  int calculateNonDealerSelfPickOtherReceive() {
+    return this._polyfillReceive(this.basicPoint);
+  }
+
+  /// Amount of the tile discard player should pays
+  int calculateNonDealerDiscardReceive() {
+    return this._polyfillReceive(this.basicPoint * 4);
+  }
+
+  /// Amount of every other players pay
   int calculateDealerSelfPickReceive() {
     return this._polyfillReceive(this.basicPoint * 2);
   }
