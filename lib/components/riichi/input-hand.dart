@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:tanyao/components/tile/set-marker.dart';
 import 'package:tanyao/components/tile/tile-hand.dart';
 import 'package:tanyao/components/tile/tile-input.dart';
 import 'package:tanyao/mahjong/hand.dart';
@@ -29,15 +31,42 @@ class _RiichiMahjongHandInputViewState
           SizedBox(
             height: 10.0,
           ),
-          TileInputView(
-            onPressed: (MahjongTile tile) {
-              if (this._hand.getTotalTileCount() >= 17) {
-                return;
-              }
-
-              this._hand.addTile(tile);
-              this.setState(() {});
-            },
+          ConstrainedBox(
+            child: Swiper(
+              itemCount: 3,
+              itemBuilder: (BuildContext context, int index) {
+                switch (index) {
+                  case 0:
+                    {
+                      return TileInputView(
+                        onPressed: (MahjongTile tile) {
+                          if (this._hand.getTotalTileCount() >= 17) {
+                            return;
+                          }
+                          this._hand.addTile(tile);
+                          this.setState(() {});
+                        },
+                      );
+                    }
+                  case 1:
+                    {
+                      return MahjongSetMarkerView(
+                        hand: this._hand,
+                      );
+                    }
+                }
+                return Container();
+              },
+              pagination: SwiperPagination(
+                margin: const EdgeInsets.all(5.0),
+              ),
+            ),
+            constraints: BoxConstraints.loose(
+              Size(
+                MediaQuery.of(context).size.width,
+                185.0,
+              ),
+            ),
           ),
         ],
       ),
