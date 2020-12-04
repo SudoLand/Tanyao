@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:tanyao/components/tile/set-marker.dart';
+import 'package:tanyao/components/riichi/finalize-list.dart';
 import 'package:tanyao/components/tile/tile-hand.dart';
-import 'package:tanyao/components/tile/tile-input.dart';
 import 'package:tanyao/mahjong/hand.dart';
 import 'package:tanyao/mahjong/tile.dart';
 
@@ -14,10 +13,21 @@ class RiichiMahjongHandInputView extends StatefulWidget {
 
 class _RiichiMahjongHandInputViewState
     extends State<RiichiMahjongHandInputView> {
-  final MahjongHand _hand = MahjongHand();
+  MahjongHand _hand = MahjongHand();
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> finalizeList = buildRiichiMahjongFinalizeList(
+      this._hand,
+      onHandUpdate: (MahjongHand newHand) {
+        this.setState(
+          () {
+            this._hand = newHand;
+          },
+        );
+      },
+    );
+
     return Container(
       child: Column(
         children: [
@@ -33,31 +43,19 @@ class _RiichiMahjongHandInputViewState
           ),
           ConstrainedBox(
             child: Swiper(
-              itemCount: 3,
+              loop: false,
+              itemCount: finalizeList.length,
               itemBuilder: (BuildContext context, int index) {
-                switch (index) {
-                  case 0:
-                    {
-                      return TileInputView(
-                        onPressed: (MahjongTile tile) {
-                          if (this._hand.getTotalTileCount() >= 17) {
-                            return;
-                          }
-                          this._hand.addTile(tile);
-                          this.setState(() {});
-                        },
-                      );
-                    }
-                  case 1:
-                    {
-                      return MahjongSetMarkerView(
-                        hand: this._hand,
-                      );
-                    }
+                if (finalizeList[index] is Widget) {
+                  return finalizeList[index];
                 }
                 return Container();
               },
               pagination: SwiperPagination(
+                builder: DotSwiperPaginationBuilder(
+                  color: Theme.of(context).buttonColor,
+                  activeColor: Theme.of(context).accentColor,
+                ),
                 margin: const EdgeInsets.all(5.0),
               ),
             ),
