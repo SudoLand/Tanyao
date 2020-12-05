@@ -23,7 +23,7 @@ class ToolsView extends StatelessWidget {
             icon: Icon(Icons.timelapse),
             title: coreLocalizations.getText("tile-input-tool"),
             subtitle: coreLocalizations.getText(
-              "start-tool",
+              "start-tool!1",
               replacements: {
                 "tool": coreLocalizations.getString("tile-input-tool"),
               },
@@ -43,7 +43,7 @@ class ToolsView extends StatelessWidget {
               "game": coreLocalizations.getString("riichi-mahjong"),
             }),
             subtitle: coreLocalizations.getText(
-              "start-tool",
+              "start-tool!1",
               replacements: {
                 "tool": coreLocalizations
                     .getString("point-calculator-tool!1", replacements: {

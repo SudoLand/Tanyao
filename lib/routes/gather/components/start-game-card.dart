@@ -22,7 +22,7 @@ class GatherStartGameCardView extends StatelessWidget {
       icon: this.icon,
       title: Text(this.gameName),
       subtitle: coreLocalizations.getText(
-        "start-offline-game",
+        "start-offline-game!1",
         replacements: {
           "game": this.gameName,
         },
