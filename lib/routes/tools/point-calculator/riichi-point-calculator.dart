@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tanyao/components/riichi/input-hand-navigator.dart';
+import 'package:tanyao/components/riichi/input-hand-navigator/input-hand-navigator.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
 
 class RiichiPointCalculatorToolView extends StatefulWidget {
