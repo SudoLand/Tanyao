@@ -38,13 +38,23 @@ void main() {
     expect(results[0].mahjongSets.length, equals(5));
   });
 
+  test('finalize result - double possible (without remove duplicated)', () {
+    final List<MahjongTracePossibleResult> results =
+        finalizeMahjongPossibleResults(
+      MahjongHand.fromString('1s1s1s2s2s2s3s3s3s1p2p3pnono'),
+      removeDuplicate: false,
+    );
+
+    expect(results.length, equals(4));
+  });
+
   test('finalize result - double possible', () {
     final List<MahjongTracePossibleResult> results =
         finalizeMahjongPossibleResults(
       MahjongHand.fromString('1s1s1s2s2s2s3s3s3s1p2p3pnono'),
     );
 
-    expect(results.length, equals(4));
+    expect(results.length, equals(3));
   });
 }
 // spell-checker:enable
