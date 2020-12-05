@@ -5,10 +5,10 @@ import 'package:tanyao/mahjong/riichi/type.dart';
 import 'package:tanyao/mahjong/trace/finalize.dart';
 import 'package:tanyao/mahjong/trace/possible.dart';
 
-class MahjongSelectResultFinalizeView extends StatelessWidget {
+class MahjongRiichiSelectResultFinalizeView extends StatelessWidget {
   final MahjongHand hand;
 
-  MahjongSelectResultFinalizeView({
+  MahjongRiichiSelectResultFinalizeView({
     @required this.hand,
   });
 

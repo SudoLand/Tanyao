@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tanyao/components/finalize/select-result.dart';
 import 'package:tanyao/components/finalize/set-marker.dart';
+import 'package:tanyao/components/riichi/finalize/select-result.dart';
 import 'package:tanyao/components/tile/tile-input.dart';
 import 'package:tanyao/mahjong/hand.dart';
 import 'package:tanyao/mahjong/tile.dart';
@@ -21,7 +21,7 @@ List<Widget> buildRiichiMahjongFinalizeList(
         onHandUpdate(cloneHand);
       },
     ),
-    MahjongSelectResultFinalizeView(
+    MahjongRiichiSelectResultFinalizeView(
       hand: cloneHand,
     ),
     MahjongSetMarkerFinalizeView(
