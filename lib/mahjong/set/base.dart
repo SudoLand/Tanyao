@@ -1,7 +1,7 @@
 import 'package:tanyao/mahjong/tile.dart';
 import 'package:tanyao/util/parse.dart';
 
-abstract class MahjongSet {
+abstract class MahjongSet implements Comparable {
   final List<MahjongTile> tiles;
 
   MahjongSet(this.tiles);
@@ -52,6 +52,27 @@ abstract class MahjongSet {
 
   String toString() {
     return tiles.map((MahjongTile tile) => tile.toString()).join(',');
+  }
+
+  @override
+  int compareTo(dynamic other) {
+    if (!(other is MahjongSet)) {
+      return null;
+    }
+
+    int currentSum = 0;
+
+    for (MahjongTile tile in this.tiles) {
+      currentSum += tile.hashCode;
+    }
+
+    int otherSum = 0;
+
+    for (MahjongTile tile in other.tiles) {
+      otherSum += tile.hashCode;
+    }
+
+    return currentSum.compareTo(otherSum);
   }
 
   @override
