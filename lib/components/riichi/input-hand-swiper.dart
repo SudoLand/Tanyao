@@ -5,14 +5,14 @@ import 'package:tanyao/components/tile/tile-hand.dart';
 import 'package:tanyao/mahjong/hand.dart';
 import 'package:tanyao/mahjong/tile.dart';
 
-class RiichiMahjongHandInputView extends StatefulWidget {
+class RiichiMahjongHandInputSwiperView extends StatefulWidget {
   @override
-  _RiichiMahjongHandInputViewState createState() =>
-      _RiichiMahjongHandInputViewState();
+  _RiichiMahjongHandInputViewSwiperState createState() =>
+      _RiichiMahjongHandInputViewSwiperState();
 }
 
-class _RiichiMahjongHandInputViewState
-    extends State<RiichiMahjongHandInputView> {
+class _RiichiMahjongHandInputViewSwiperState
+    extends State<RiichiMahjongHandInputSwiperView> {
   MahjongHand _hand = MahjongHand();
 
   @override

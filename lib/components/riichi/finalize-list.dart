@@ -20,7 +20,7 @@ List<Widget> buildRiichiMahjongFinalizeList(
         onHandUpdate(cloneHand);
       },
     ),
-    MahjongSetMarkerView(
+    MahjongSetMarkerFinalizeView(
       hand: cloneHand,
     ),
   ];

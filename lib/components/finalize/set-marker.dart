@@ -4,10 +4,10 @@ import 'package:tanyao/mahjong/hand.dart';
 import 'package:tanyao/mahjong/trace/finalize.dart';
 import 'package:tanyao/mahjong/trace/possible.dart';
 
-class MahjongSetMarkerView extends StatelessWidget {
+class MahjongSetMarkerFinalizeView extends StatelessWidget {
   final MahjongHand hand;
 
-  MahjongSetMarkerView({
+  MahjongSetMarkerFinalizeView({
     @required this.hand,
   });
 
