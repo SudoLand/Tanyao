@@ -23,10 +23,8 @@ void main() {
       MahjongHand.fromString('1s1s1s2s3s'),
     );
 
-    print(results);
-
-    expect(results.length, equals(2));
-    expect(results[0].toString(), equals(""));
+    expect(results.length, equals(1));
+    expect(results[0].toString(), equals("[1s,1s],[1s,2s,3s]"));
   });
 
   test('finalize result - full hand', () {

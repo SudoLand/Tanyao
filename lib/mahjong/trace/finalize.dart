@@ -25,5 +25,17 @@ List<MahjongTracePossibleResult> finalizeMahjongPossibleResults(
     }
   }
 
-  return finalizedResults;
+  final List<MahjongTracePossibleResult> reducedFinalizedResults = [];
+
+  outer:
+  for (MahjongTracePossibleResult each in finalizedResults) {
+    for (MahjongTracePossibleResult reducedEach in reducedFinalizedResults) {
+      if (each.toString() == reducedEach.toString()) {
+        continue outer;
+      }
+    }
+    reducedFinalizedResults.add(each);
+  }
+
+  return reducedFinalizedResults;
 }
