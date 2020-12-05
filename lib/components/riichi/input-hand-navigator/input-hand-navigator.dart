@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tanyao/components/riichi/input-hand-navigator/select-result.dart';
 import 'package:tanyao/components/riichi/input-hand-navigator/tile-input.dart';
 import 'package:tanyao/mahjong/hand.dart';
 
@@ -31,6 +32,11 @@ class _RiichiMahjongHandInputViewNavigatorState
                     });
                   },
                 );
+              };
+              break;
+            case 'riichi-input-hand-navigator/#/select-result':
+              builder = (_) {
+                return RiichiMahjongHandInputNavigatorSelectResultView();
               };
               break;
             default:
