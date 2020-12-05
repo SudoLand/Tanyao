@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tanyao/components/riichi/input-hand-swiper.dart';
+import 'package:tanyao/components/riichi/input-hand-navigator.dart';
 import 'package:tanyao/i18n/core/localizations.dart';
 
 class RiichiPointCalculatorToolView extends StatefulWidget {
@@ -23,12 +23,11 @@ class _RiichiPointCalculatorToolViewState
       ),
       body: Column(
         children: [
-          Card(),
           Card(
             margin: const EdgeInsets.all(10.0),
             child: Container(
               padding: const EdgeInsets.all(15.0),
-              child: RiichiMahjongHandInputSwiperView(),
+              child: RiichiMahjongHandInputNavigatorView(),
             ),
           ),
         ],
