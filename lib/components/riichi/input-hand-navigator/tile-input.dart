@@ -33,14 +33,16 @@ class RiichiMahjongHandInputNavigatorTileInputView extends StatelessWidget {
         SizedBox(
           height: 10.0,
         ),
-        TileInputView(
-          onPressed: (MahjongTile tile) {
-            if (cloneHand.getTotalTileCount() >= 14) {
-              return;
-            }
-            cloneHand.addTile(tile);
-            this.onHandUpdate(cloneHand);
-          },
+        Expanded(
+          child: TileInputView(
+            onPressed: (MahjongTile tile) {
+              if (cloneHand.getTotalTileCount() >= 14) {
+                return;
+              }
+              cloneHand.addTile(tile);
+              this.onHandUpdate(cloneHand);
+            },
+          ),
         ),
         SizedBox(
           height: 10.0,
