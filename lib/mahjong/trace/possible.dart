@@ -15,6 +15,10 @@ class MahjongTracePossibleResult {
     return this.finalized && this.hand.getTotalTileCount() == 0;
   }
 
+  void sort() {
+    this.mahjongSets.sort();
+  }
+
   List<MahjongTracePossibleResult> findNext() {
     final MahjongHand cloneHand = this.hand.clone();
     final List<MahjongTracePossibleResult> nextResults = [];
@@ -27,7 +31,10 @@ class MahjongTracePossibleResult {
       );
 
       for (MahjongSet combo in combos) {
-        nextResults.add(this.removeAndAddClone(combo));
+        final MahjongTracePossibleResult cloned = this.removeAndAddClone(combo);
+        cloned.sort();
+
+        nextResults.add(cloned);
       }
 
       if (combos.isNotEmpty) {
