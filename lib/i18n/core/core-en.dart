@@ -7,6 +7,7 @@ const Map<String, String> coreLocalizationEnglish = {
   "he-win": "Win!",
   "history": "History",
   "north": "North",
+  "point-calculator-tool!1": "{game} point calculator tool",
   "result": "Result",
   "riichi-mahjong": "Riichi Mahjong",
   "south": "South",

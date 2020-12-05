@@ -7,6 +7,7 @@ const Map<String, String> coreLocalizationChinese = {
   "he-win": "和",
   "history": "历史",
   "north": "北",
+  "point-calculator-tool!1": "{game}分数计算器工具",
   "result": "结果",
   "riichi-mahjong": "立直麻将",
   "south": "南",
