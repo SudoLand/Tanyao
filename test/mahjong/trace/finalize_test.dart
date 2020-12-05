@@ -17,6 +17,16 @@ void main() {
     expect(results[0].mahjongSets[0].toString(), equals('1s,2s,3s'));
   });
 
+  test('finalize result - duplicated result', () {
+    final List<MahjongTracePossibleResult> results =
+        finalizeMahjongPossibleResults(
+      MahjongHand.fromString('1s1s1s2s3s'),
+    );
+
+    expect(results.length, equals(2));
+    expect(results[0].toString(), equals(""));
+  });
+
   test('finalize result - full hand', () {
     final List<MahjongTracePossibleResult> results =
         finalizeMahjongPossibleResults(
