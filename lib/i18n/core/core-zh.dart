@@ -17,6 +17,7 @@ const Map<String, String> coreLocalizationChinese = {
   "tanyao": "断幺",
   "tools": "工具",
   "tile-input-tool": "牌输入工具",
+  "untraceable": "无法追踪",
   "west": "西",
   "zhong": "中",
 };

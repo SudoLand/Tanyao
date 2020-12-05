@@ -17,6 +17,7 @@ const Map<String, String> coreLocalizationEnglish = {
   "tanyao": "Tanyao",
   "tools": "tools",
   "tile-input-tool": "Tile Input Tool",
+  "untraceable": "Untraceable",
   "west": "West",
   "zhong": "Zhong",
 };
