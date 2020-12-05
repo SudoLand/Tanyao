@@ -22,7 +22,7 @@ class RiichiMahjongHandInputNavigatorTileInputView extends StatelessWidget {
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         TileHandView(
           cloneHand,
@@ -45,16 +45,19 @@ class RiichiMahjongHandInputNavigatorTileInputView extends StatelessWidget {
         SizedBox(
           height: 10.0,
         ),
-        RaisedButton(
-          child: coreLocalizations.getText("next-step!1", replacements: {
-            "route": coreLocalizations.getString("select-result"),
-          }),
-          onPressed: () {
-            Navigator.of(context).pushNamed(
-              'riichi-input-hand-navigator/#/select-result',
-            );
-          },
-        )
+        Align(
+          alignment: Alignment.topRight,
+          child: RaisedButton(
+            child: coreLocalizations.getText("next-step!1", replacements: {
+              "route": coreLocalizations.getString("select-result"),
+            }),
+            onPressed: () {
+              Navigator.of(context).pushNamed(
+                'riichi-input-hand-navigator/#/select-result',
+              );
+            },
+          ),
+        ),
       ],
     );
   }

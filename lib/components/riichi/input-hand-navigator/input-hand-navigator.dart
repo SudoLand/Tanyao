@@ -22,7 +22,7 @@ class _RiichiMahjongHandInputViewNavigatorState
           WidgetBuilder builder;
           switch (settings.name) {
             case 'riichi-input-hand-navigator/#/tile-input':
-              builder = (BuildContext innerContext) {
+              builder = (_) {
                 return RiichiMahjongHandInputNavigatorTileInputView(
                   hand: this._hand,
                   onHandUpdate: (MahjongHand newHand) {
