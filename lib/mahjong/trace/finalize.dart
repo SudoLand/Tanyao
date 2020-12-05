@@ -2,8 +2,9 @@ import 'package:tanyao/mahjong/hand.dart';
 import 'package:tanyao/mahjong/trace/possible.dart';
 
 List<MahjongTracePossibleResult> finalizeMahjongPossibleResults(
-  MahjongHand hand,
-) {
+  MahjongHand hand, {
+  bool removeDuplicate = true,
+}) {
   final List<MahjongTracePossibleResult> finalizedResults = [];
   final List<MahjongTracePossibleResult> possibleResults = [
     MahjongTracePossibleResult(hand, []),
@@ -23,6 +24,10 @@ List<MahjongTracePossibleResult> finalizeMahjongPossibleResults(
     for (MahjongTracePossibleResult eachResult in iteratedResults) {
       possibleResults.add(eachResult);
     }
+  }
+
+  if (!removeDuplicate) {
+    return finalizedResults;
   }
 
   final List<MahjongTracePossibleResult> reducedFinalizedResults = [];
