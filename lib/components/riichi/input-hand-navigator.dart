@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tanyao/components/tile/tile-hand.dart';
 import 'package:tanyao/components/tile/tile-input.dart';
 import 'package:tanyao/mahjong/hand.dart';
 import 'package:tanyao/mahjong/tile.dart';
@@ -23,9 +24,19 @@ class _RiichiMahjongHandInputViewNavigatorState
           WidgetBuilder builder;
           switch (settings.name) {
             case 'riichi-input-hand-navigator/#/tile-input':
-              builder = (_) {
+              builder = (BuildContext innerContext) {
                 return Column(
                   children: [
+                    TileHandView(
+                      this._hand,
+                      onRemovePressed: (MahjongTile tile) {
+                        this._hand.removeTile(tile);
+                        this.setState(() {});
+                      },
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
                     TileInputView(
                       onPressed: (MahjongTile tile) {
                         if (this._hand.getTotalTileCount() >= 14) {
@@ -35,6 +46,17 @@ class _RiichiMahjongHandInputViewNavigatorState
                         this.setState(() {});
                       },
                     ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    RaisedButton(
+                      child: Text("123"),
+                      onPressed: () {
+                        Navigator.of(innerContext).pushNamed(
+                          'riichi-input-hand-navigator/#/select-result',
+                        );
+                      },
+                    )
                   ],
                 );
               };
